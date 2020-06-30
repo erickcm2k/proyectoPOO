@@ -5,10 +5,22 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jahaziel
  */
-public class Profesor {
+public class Profesor extends Usuario{
+    
+    //Atributos de Profesor
+    private String numEmpleado;
+    private ArrayList<String> materiasImparte;
+    
+    //Genero que añade una materia que imparte el profesor al arrgelo
+    public void addNateria(String materia){
+        //Modificar
+    }
+    
     
 }
