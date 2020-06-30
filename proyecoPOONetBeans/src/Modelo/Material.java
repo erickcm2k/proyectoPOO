@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.io.File;
+
 /**
  *
  * @author Jahaziel
@@ -15,5 +17,14 @@ public abstract class Material {
     protected String titulo;
     protected String autor;
     protected int anio;
+    protected String areaConocimiento;
+    protected int numEjemplares;
+    
+    //ver los materiales existetes
+    public File ver(){
+        //modificar
+        return null;
+        
+    }
     
 }

@@ -5,15 +5,13 @@
  */
 package Modelo;
 
-import java.net.URL;
-
 /**
  *
  * @author Jahaziel
  */
-class MaterialElectronico extends Material{
-    //Atributos del Material Electronico
-    private URL paginaDescarga;
-    private String claveTemporal;
+public class Revista extends Material{
+    //Atributos de Revista
+    private String volumen;
+    private String numero;
     
 }
