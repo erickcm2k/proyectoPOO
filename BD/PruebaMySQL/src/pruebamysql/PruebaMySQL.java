@@ -5,9 +5,6 @@
  */
 package pruebamysql;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
 /**
  *
  * @author erick
@@ -26,8 +23,8 @@ public class PruebaMySQL {
         }*/
         BaseDeDatos miBD = new BaseDeDatos("localhost:3306", "root", "cometota", "biblioteca");
         miBD.conectar();
-        miBD.cerrar();
-     
+        miBD.insertarTelefono();
+        miBD.ejecutarSentencia();        
     }
     
 }

@@ -1,13 +1,16 @@
+-- Para Material
+
 -- MATERIAL ~ LIBRO
 INSERT INTO material(
 id, tipo_material, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn
 )
-VALUES("", "", "", "", "", "", "", "");
+VALUES("1", "Libro", "Harry Potter", "JK Rowling", "20000", "Literatura", "21", "12345");
 -- MATERIAL ~ REVISTA
 INSERT INTO material(
 id, tipo_material, titulo, autor, anio, area_conocimiento, numero_ejemplares, volumen, numero
 )
 VALUES("", "", "", "", "", "", "", "", "");
+INSERT INTO material(
 -- MATERIAL ~ MATERIAL ELECTRÓNICO
 INSERT INTO material(
 id, tipo_material, titulo, autor, anio, area_conocimiento, numero_ejemplares, pagina_descarga, clave_temporal
@@ -15,20 +18,19 @@ id, tipo_material, titulo, autor, anio, area_conocimiento, numero_ejemplares, pa
 VALUES("", "", "", "", "", "", "", "", "");
 
 
-
 -- PRESTAMO
 INSERT INTO prestamo(
     id_prestamo, id_persona, id_material, fecha_prestamo, fecha_devolucion, multa
 )
-VALUES("", "", "", "", "", "");
+VALUES("1", "1", "1", "2020-07-10", "2021-07-10", "2020.10");
 
-
+-- Para Usuario
 
 -- USUARIO ~ USUARIO COMÚN
 INSERT INTO usuario(
     id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario
 )
-VALUES("", "", "", "", "", "", "", "");
+VALUES("1", "Erick", "Castañeda", "Martínez", "2000-07-10", "Ax 101", "1234", "ecastanedam");
 -- USUARIO ~ PROFESOR
 INSERT INTO usuario(
     id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado
@@ -41,14 +43,11 @@ INSERT INTO usuario(
 VALUES("", "", "", "", "", "", "", "", "", "");
 
 
-
 -- TELEFONO
 INSERT INTO telefono(
     id_usuario, telefono
 )
-VALUES("", "");
-
-
+VALUES("1", "55667788");
 
 -- MATERIA
 INSERT INTO materia(

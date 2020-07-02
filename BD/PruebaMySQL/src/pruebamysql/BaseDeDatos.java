@@ -1,6 +1,7 @@
 package pruebamysql;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 public class BaseDeDatos { 
@@ -24,15 +25,7 @@ public class BaseDeDatos {
             cadenaConexion += "/" + bd;
             System.out.println(cadenaConexion);
             conexion = DriverManager.getConnection(cadenaConexion, usuario, contrasenia);
-            
-            
-            Statement myStatement = conexion.createStatement();
-            ResultSet myResult = myStatement.executeQuery("select * from usuario");
-            
-            while(myResult.next()) {
-                System.out.println(myResult.getString("id") + " " + myResult.getString("nombre"));
-            }
-            
+                        
             
         } catch(SQLException e) {
             e.printStackTrace();
@@ -43,7 +36,61 @@ public class BaseDeDatos {
         }
         return true;
     }
+    
+    public void ejecutarSentencia() {
+        try {
+                       
+            Statement myStatement = conexion.createStatement();
+            ResultSet myResult = myStatement.executeQuery("select * from prestamo");
+            ArrayList<Prestamo> prestamos = new ArrayList();
+            while(myResult.next()) {            
+                
+                
+                int idPrestamo = Integer.parseInt(myResult.getString("id_prestamo"));
+                int idPersona = Integer.parseInt(myResult.getString("id_persona"));
+                int idMaterial = Integer.parseInt(myResult.getString("id_material"));
+                Date fechaPrestamo = Date.valueOf(myResult.getString("fecha_prestamo"));
+                Date fechaDevolucion = Date.valueOf(myResult.getString("fecha_devolucion"));
+                double multa = Double.parseDouble(myResult.getString("multa"));  
+                    
+                Prestamo prestamoActual = new Prestamo(idPrestamo, idPersona, idMaterial, fechaPrestamo, fechaDevolucion, multa);
+               prestamos.add(prestamoActual);
+            } 
+            
+            int i = 0;
+            for(Prestamo prestamo: prestamos) {
+                System.out.println("Elemento" + i++);
+                System.out.println(prestamo.getId_prestamo());
+                System.out.println(prestamo.getId_persona());
+                System.out.println(prestamo.getId_material());
+                System.out.println(prestamo.getFecha_prestamo());
+                System.out.println(prestamo.getFecha_devolucion());
+                System.out.println(prestamo.getMulta());
+            }
+            
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void insertarTelefono() {
+        try {
+            Statement myStatement = conexion.createStatement();
+            
+            int id_usuario = 1;
+            int telefono = 12345;
+            
+                    
+            PreparedStatement post = conexion.prepareStatement("insert into telefono(id_usuario, telefono) values("+id_usuario+","+telefono+");");
+            post.executeUpdate();
+            
+            //ResultSet myResult = myStatement.executeQuery("insert into telefono(id_usuario, telefono) values(" + id_usuario + "," + telefono + ")");            
+        } catch(SQLException e) {
+            System.out.println("Error al ingresar datos, revisar detalles de la consulta.");
+        }
+    }
+    
+    
     public boolean cerrar() {
         try {
             conexion.close();
