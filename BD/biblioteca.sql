@@ -14,7 +14,7 @@ CREATE TABLE material(
     volumen VARCHAR(30),
     numero VARCHAR(30),
     pagina_descarga VARCHAR(30),
-    clave_temporal VARCHAR(30)
+    clave_temporal INT
 );
 
 CREATE TABLE prestamo(
