@@ -5,6 +5,9 @@
  */
 package Modelo;
 
+import java.sql.Date;
+import java.util.ArrayList;
+
 /**
  *
  * @author Jahaziel
@@ -14,8 +17,12 @@ public class Empleado extends Persona{
     //Definicion de los atributos de Empleado
     private String horario;
     
-    //Falta Crear Costructor;
-    
+    //Constructor por paremetros
+    public Empleado(String horario, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario) {
+        super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefono, claveAcceso, nombreUsuario);
+        this.horario = horario;
+    }
+
     //Metodo que Genera las Claves de los Materiales Electronicos
     public String generarClave(MaterialElectronico materialE){
         //Modifciar
