@@ -11,9 +11,6 @@ package Modelo;
  */
 public abstract class Usuario extends Persona{
     
-    //Atributos de Usuario
-    protected String clave;
-    protected String nombreUsuario;
     
     //Metodo que solicita un Material para prestamo
     public boolean solicitaPrestamo(){

@@ -22,5 +22,7 @@ public abstract class Persona {
     protected Date fechaNacimiento;
     protected String domicilio;
     protected ArrayList<String> String;
+    protected String claveAcceso;
+    protected String nombreUsuario;
     
 }

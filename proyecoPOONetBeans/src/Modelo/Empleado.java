@@ -13,7 +13,6 @@ public class Empleado extends Persona{
     
     //Definicion de los atributos de Empleado
     private String horario;
-    private String claveAcceso;
     
     //Falta Crear Costructor;
     
