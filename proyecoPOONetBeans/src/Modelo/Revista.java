@@ -14,4 +14,12 @@ public class Revista extends Material{
     private String volumen;
     private String numero;
     
+    //Constructor por parametros
+
+    public Revista(String volumen, String numero, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+        super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
+        this.volumen = volumen;
+        this.numero = numero;
+    }
+    
 }

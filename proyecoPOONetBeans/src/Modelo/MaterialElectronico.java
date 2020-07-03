@@ -15,5 +15,13 @@ class MaterialElectronico extends Material{
     //Atributos del Material Electronico
     private URL paginaDescarga;
     private String claveTemporal;
+
+    //Constructor por paramtros
+    public MaterialElectronico(URL paginaDescarga, String claveTemporal, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+        super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
+        this.paginaDescarga = paginaDescarga;
+        this.claveTemporal = claveTemporal;
+    }
+    
     
 }

@@ -20,6 +20,18 @@ public abstract class Material {
     protected String areaConocimiento;
     protected int numEjemplares;
     
+    //Constructor de la clase Material
+
+    public Material(int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio = anio;
+        this.areaConocimiento = areaConocimiento;
+        this.numEjemplares = numEjemplares;
+    }
+    
+    
     //ver los materiales existetes
     public File ver(){
         //modificar

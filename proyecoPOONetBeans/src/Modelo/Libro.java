@@ -12,5 +12,12 @@ package Modelo;
 public class Libro extends Material{
     //Atributos de Libro
     private String isbn;
+
+    public Libro(int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares, String isbn) {
+        super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
+        this.isbn=isbn;
+    }   
+    
+    
     
 }
