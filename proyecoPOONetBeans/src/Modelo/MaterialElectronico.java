@@ -23,5 +23,24 @@ class MaterialElectronico extends Material{
         this.claveTemporal = claveTemporal;
     }
     
+    /*
+    ***********************Getters t Setters de Material Eñectronico **************
+    */
+
+    public URL getPaginaDescarga() {
+        return paginaDescarga;
+    }
+
+    public void setPaginaDescarga(URL paginaDescarga) {
+        this.paginaDescarga = paginaDescarga;
+    }
+
+    public String getClaveTemporal() {
+        return claveTemporal;
+    }
+
+    public void setClaveTemporal(String claveTemporal) {
+        this.claveTemporal = claveTemporal;
+    }
     
 }

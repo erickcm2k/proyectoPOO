@@ -22,4 +22,21 @@ public class Revista extends Material{
         this.numero = numero;
     }
     
+    /*
+    ***************** Setters y Getters****************************
+    */
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getVolumen() {
+        return volumen;
+    }
+    
+    
 }

@@ -16,7 +16,7 @@ public class Prestamo {
     private Date fechaPrestamo;
     private Date fechaDevolucion;
     private double multa;
-    private ArrayList<Material> materia;
+    private ArrayList<Material> material;
     
     //Funcion que verifica si el prestamo tiene adeudo
     public boolean tieneAdeudo(){
@@ -29,5 +29,50 @@ public class Prestamo {
         return 0;
         
     }
+
+    //asigna un arrayLIst a materiales
+    public void añadirMaterial(ArrayList<Material> material) {
+        this.material = material;
+    }
+    
+    //añade material uno por uno al arraylist
+    public void añadirMaterial(Material material) {
+        this.material.add(material);
+    }
+    
+    /*
+    **************************Setters y Getters****************
+    */
+
+    public Date getFechaPrestamo() {
+        return fechaPrestamo;
+    }
+
+    public void setFechaPrestamo(Date fechaPrestamo) {
+        this.fechaPrestamo = fechaPrestamo;
+    }
+
+    public Date getFechaDevolucion() {
+        return fechaDevolucion;
+    }
+
+    public void setFechaDevolucion(Date fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
+
+    public double getMulta() {
+        return multa;
+    }
+
+    public void setMulta(double multa) {
+        this.multa = multa;
+    }
+
+    public ArrayList<Material> getMaterial() {
+        return material;
+    }
+
+    
+    
     
 }

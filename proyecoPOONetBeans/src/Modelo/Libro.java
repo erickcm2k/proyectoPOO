@@ -18,6 +18,17 @@ public class Libro extends Material{
         this.isbn=isbn;
     }   
     
+    /*
+    *********************Setters y Getters de Modelo**************************************
+    */
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
     
     
 }

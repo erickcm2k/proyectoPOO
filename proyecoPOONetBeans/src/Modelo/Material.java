@@ -21,7 +21,6 @@ public abstract class Material {
     protected int numEjemplares;
     
     //Constructor de la clase Material
-
     public Material(int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
         this.id = id;
         this.titulo = titulo;
@@ -38,5 +37,37 @@ public abstract class Material {
         return null;
         
     }
+
+    //Setter para actualizar cuantos ejemplajers hay del material
+    public void cambiarNumeroEjemplares(int numEjemplares) {
+        this.numEjemplares = numEjemplares;
+    }
+
+    /*
+    **************************Setters de la Clase Materiasl*************************************
+    */
+    public int getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public String getAreaConocimiento() {
+        return areaConocimiento;
+    }
+    
+    
+    
+    
     
 }
