@@ -20,8 +20,7 @@ public class Prestamo {
     
     //Funcion que verifica si el prestamo tiene adeudo
     public boolean tieneAdeudo(){
-        //Modificar
-        return false;
+        return fechaDevolucion.compareTo(fechaPrestamo)>=0;
     }
     
     //Ccalucla el costo total del adeudo;
