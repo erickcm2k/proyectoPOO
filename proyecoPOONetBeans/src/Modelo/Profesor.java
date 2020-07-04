@@ -26,9 +26,29 @@ public class Profesor extends Usuario{
         this.materiasImparte = materiasImparte;
     }
     
-    //Genero que añade una materia que imparte el profesor al arrgelo
+    //Añade una materia al arraylist materiasIMparte el profesor
     public void addNateria(String materia){
-        //Modificar
+        this.materiasImparte.add(materia);
+    }
+    
+     /*
+    ***************Getters y Setters****************
+    */
+
+    public String getNumEmpleado() {
+        return numEmpleado;
+    }
+
+    public void setNumEmpleado(String numEmpleado) {
+        this.numEmpleado = numEmpleado;
+    }
+
+    public ArrayList<String> getMateriasImparte() {
+        return materiasImparte;
+    }
+
+    public void setMateriasImparte(ArrayList<String> materiasImparte) {
+        this.materiasImparte = materiasImparte;
     }
     
     

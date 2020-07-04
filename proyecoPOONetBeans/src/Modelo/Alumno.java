@@ -53,5 +53,14 @@ public class Alumno extends Usuario{
         this.nivel = nivel;
     }
     
+     /*
+    ***************Getters y Setters****************
+    */
+
+    public String getBoleta() {
+        return boleta;
+    }
+
+    
     
 }
