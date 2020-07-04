@@ -24,9 +24,34 @@ public class Alumno extends Usuario{
         this.nivel = nivel;
     }
 
-    //Metodo que cambia de nivel de estudios al alumno
+    //Metodo que cambia de nivel de estudios al alumno de acuerdo al String recibido
     public void cambiarNivel(String nivel) {
-        //Modifcar
+       switch(nivel){
+           case "Primaria":
+                setNivel("Primaria");
+                break;
+           case "Secundaria":
+               setNivel("Secundaria");
+               break;
+           case "Preparatoria":
+               setNivel("Preparatoria");
+               break;
+       }
     }
+    
+    //Sobrescribimiento para el prestamo que puede pedir el alumno
+    @Override
+    public boolean solicitaPrestamo(){
+        
+        //Modificar
+        return false;
+        
+    }
+    
+    //Setter del Nivel:
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+    
     
 }
