@@ -5,19 +5,17 @@
  */
 package Modelo;
 
-import java.net.URL;
-
 /**
  *
  * @author Jahaziel
  */
 class MaterialElectronico extends Material{
     //Atributos del Material Electronico
-    private URL paginaDescarga;
-    private String claveTemporal;
+    private int paginaDescarga;
+    private int claveTemporal;
 
     //Constructor por paramtros
-    public MaterialElectronico(URL paginaDescarga, String claveTemporal, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+    public MaterialElectronico(int paginaDescarga, int claveTemporal, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
         super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
         this.paginaDescarga = paginaDescarga;
         this.claveTemporal = claveTemporal;
@@ -27,19 +25,19 @@ class MaterialElectronico extends Material{
     ***********************Getters t Setters de Material Eñectronico **************
     */
 
-    public URL getPaginaDescarga() {
+    public int getPaginaDescarga() {
         return paginaDescarga;
     }
 
-    public void setPaginaDescarga(URL paginaDescarga) {
+    public void setPaginaDescarga(int paginaDescarga) {
         this.paginaDescarga = paginaDescarga;
     }
 
-    public String getClaveTemporal() {
+    public int getClaveTemporal() {
         return claveTemporal;
     }
 
-    public void setClaveTemporal(String claveTemporal) {
+    public void setClaveTemporal(int claveTemporal) {
         this.claveTemporal = claveTemporal;
     }
     

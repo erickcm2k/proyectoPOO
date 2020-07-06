@@ -2,19 +2,19 @@ CREATE DATABASE biblioteca;
 
 USE biblioteca;
 
-CREATE TABLE material(
+CREATE TABLE material( -- (1) -> Libro, (2) -> Revista, (3) -> Material Electrónico
     id INT,
-    tipo_material VARCHAR(30),
-    titulo VARCHAR(30),
-    autor VARCHAR(30),
+    tipo_material VARCHAR(100),
+    titulo VARCHAR(100),
+    autor VARCHAR(100),
     anio INT,
-    area_conocimiento VARCHAR(30),
-    numero_ejemplares INT,
-    isbn VARCHAR(30),
-    volumen INT,
-    numero INT,
-    pagina_descarga VARCHAR(30),
-    clave_temporal INT
+    area_conocimiento VARCHAR(100),
+    numero_ejemplares INT, -- Termina clase Material
+    isbn VARCHAR(100), -- Exclusivo de (1)
+    volumen INT, -- Exclusivo de (2)
+    numero INT, -- Exclusivo de (2)
+    pagina_descarga VARCHAR(100), -- Exclusivo de (3)
+    clave_temporal INT -- Exclusivo de (3)
 );
 
 CREATE TABLE material_prestado(
@@ -33,19 +33,19 @@ CREATE TABLE prestamo(
 
 CREATE TABLE persona( -- (1) -> Profesor, (2) -> Alumno, (3) -> Empleado
     id INT,
-    nombre VARCHAR(30),
-    apellido_paterno VARCHAR(30),
-    apellido_materno VARCHAR(30),
+    nombre VARCHAR(100),
+    apellido_paterno VARCHAR(100),
+    apellido_materno VARCHAR(100),
     fecha_nacimiento DATE,
-    domicilio VARCHAR(30), -- Termina clase Persona
+    domicilio VARCHAR(100), -- Termina clase Persona
     horario_entrada_empleado INT, -- Exclusivo de (3)
     horario_salida_empleado INT, -- Exclusivo de (3)
     clave_acceso_empleado INT, -- Exclusivo de (3)
     clave INT,
-    nombre_usuario VARCHAR(30), -- Termina clase Usuario
-    numero_empleado VARCHAR(30), -- Exclusivo de (1)
+    nombre_usuario VARCHAR(100), -- Termina clase Usuario
+    numero_empleado VARCHAR(100), -- Exclusivo de (1)
     boleta_alumno INT, -- Exclusivo de (2)
-    nivel_alumno VARCHAR(30) -- Exclusivo de (3)
+    nivel_alumno VARCHAR(100) -- Exclusivo de (3)
 );
 
 CREATE TABLE telefono(
@@ -55,7 +55,7 @@ CREATE TABLE telefono(
 
 CREATE TABLE materia(
     id INT,
-    nombre VARCHAR(30)
+    nombre VARCHAR(100)
 );
 
 CREATE TABLE docente_imparte_materia(

@@ -11,12 +11,12 @@ package Modelo;
  */
 public class Revista extends Material{
     //Atributos de Revista
-    private String volumen;
-    private String numero;
+    private int volumen;
+    private int numero;
     
     //Constructor por parametros
 
-    public Revista(String volumen, String numero, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+    public Revista(int volumen, int numero, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
         super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
         this.volumen = volumen;
         this.numero = numero;
@@ -26,15 +26,15 @@ public class Revista extends Material{
     ***************** Setters y Getters****************************
     */
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
-    public String getVolumen() {
+    public int getVolumen() {
         return volumen;
     }
     
