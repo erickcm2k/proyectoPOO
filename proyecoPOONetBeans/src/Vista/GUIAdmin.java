@@ -5,17 +5,31 @@
  */
 package Vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Jahaziel
  */
 public class GUIAdmin extends javax.swing.JFrame {
+	//Atributo 
+	FondoAdmin fondo2 = new FondoAdmin();
 
 	/**
 	 * Creates new form GUIAdmin
 	 */
 	public GUIAdmin() {
+		//Pesonalizar JFrame
+		this.setContentPane(fondo2);
+		
+		//LLenar JFrame
 		initComponents();
+		
+		//Localizar JFrame
+		this.setLocationRelativeTo(null);
 	}
 
 	/**
@@ -74,6 +88,21 @@ public class GUIAdmin extends javax.swing.JFrame {
 				new GUIAdmin().setVisible(true);
 			}
 		});
+	}
+	
+	//Clase que permite poner imagen de Fondo
+	class FondoAdmin extends JPanel{
+		//Atributos
+		private Image imagen;
+		
+		//Metodos
+		@Override
+		public void paint(Graphics g){
+			imagen = new ImageIcon(getClass().getResource("/icono/fondoAdmin.jpg")).getImage();
+			g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+			setOpaque(false);
+			super.paint(g);
+		}
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

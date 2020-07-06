@@ -210,19 +210,10 @@ public class GUILogin extends javax.swing.JFrame {
 		//Mostrar
 		this.repaint();
 	} 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JPanel ingredarJFrame;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbContrasena;
-    private javax.swing.JLabel lbContrasenaIcono;
-    private javax.swing.JLabel lbUsuario;
-    private javax.swing.JLabel lbUsuarioIcono;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JTextField txtUsuario;
-    // End of variables declaration//GEN-END:variables
-
+	
+	/*
+	*************************Clase que permite poner imagen de Fondo**************************
+	*/
 	class Fondo extends JPanel{
 		//Atributos
 		private Image imagen;
@@ -236,4 +227,17 @@ public class GUILogin extends javax.swing.JFrame {
 			super.paint(g);
 		}
 	}
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JPanel ingredarJFrame;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbContrasena;
+    private javax.swing.JLabel lbContrasenaIcono;
+    private javax.swing.JLabel lbUsuario;
+    private javax.swing.JLabel lbUsuarioIcono;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration//GEN-END:variables
+	
 }
