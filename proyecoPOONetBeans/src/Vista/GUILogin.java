@@ -5,24 +5,32 @@
  */
 package Vista;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Jahaziel
  */
 public class GUILogin extends javax.swing.JFrame {
+	//Atributo 
+	Fondo fondo1 = new Fondo();
 
 	/**
 	 * Creates new form GUILoggin
 	 */
 	public GUILogin() {
+		//Pesonalizar JFrame
+		this.setContentPane(fondo1);
+		
+		//LLenar JFrame
 		initComponents();
 		ponerIconos();
 		
-		//Centrar JFrame
+		//Localizar JFrame
 		this.setLocationRelativeTo(null);
 	}
 
@@ -33,9 +41,7 @@ public class GUILogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        atrasJframe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        contenidoJFrame = new javax.swing.JPanel();
         ingredarJFrame = new javax.swing.JPanel();
         lbUsuario = new javax.swing.JLabel();
         lbUsuarioIcono = new javax.swing.JLabel();
@@ -48,13 +54,9 @@ public class GUILogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Administacion Biblotecaria SIB");
 
-        atrasJframe.setBackground(new java.awt.Color(102, 255, 204));
-
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Iniciar Sesión");
-
-        contenidoJFrame.setBackground(new java.awt.Color(255, 255, 255));
 
         ingredarJFrame.setBackground(new java.awt.Color(102, 255, 204));
         ingredarJFrame.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -114,61 +116,35 @@ public class GUILogin extends javax.swing.JFrame {
                     .addComponent(lbUsuario)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbContrasenaIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbContrasena))
+                    .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbContrasena)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout contenidoJFrameLayout = new javax.swing.GroupLayout(contenidoJFrame);
-        contenidoJFrame.setLayout(contenidoJFrameLayout);
-        contenidoJFrameLayout.setHorizontalGroup(
-            contenidoJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoJFrameLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(ingredarJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        contenidoJFrameLayout.setVerticalGroup(
-            contenidoJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoJFrameLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(ingredarJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-        );
-
-        javax.swing.GroupLayout atrasJframeLayout = new javax.swing.GroupLayout(atrasJframe);
-        atrasJframe.setLayout(atrasJframeLayout);
-        atrasJframeLayout.setHorizontalGroup(
-            atrasJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenidoJFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(atrasJframeLayout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        atrasJframeLayout.setVerticalGroup(
-            atrasJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(atrasJframeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(contenidoJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(atrasJframe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel1)
+                    .addComponent(ingredarJFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(atrasJframe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(ingredarJFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -201,6 +177,12 @@ public class GUILogin extends javax.swing.JFrame {
 		}
 		//</editor-fold>
 		//</editor-fold>
+		//</editor-fold>
+		//</editor-fold>
+		//</editor-fold>
+		//</editor-fold>
+		//</editor-fold>
+		//</editor-fold>
 
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
@@ -230,9 +212,7 @@ public class GUILogin extends javax.swing.JFrame {
 	} 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel atrasJframe;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JPanel contenidoJFrame;
     private javax.swing.JPanel ingredarJFrame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbContrasena;
@@ -242,4 +222,18 @@ public class GUILogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+	class Fondo extends JPanel{
+		//Atributos
+		private Image imagen;
+		
+		//Metodos
+		@Override
+		public void paint(Graphics g){
+			imagen = new ImageIcon(getClass().getResource("/icono/fondo.png")).getImage();
+			g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+			setOpaque(false);
+			super.paint(g);
+		}
+	}
 }
