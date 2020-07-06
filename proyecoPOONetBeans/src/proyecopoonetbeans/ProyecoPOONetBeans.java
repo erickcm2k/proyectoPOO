@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package proyecopoonetbeans;
-
+import Modelo.ConexionBD;
 import Modelo.*;
 import java.util.ArrayList;
 
@@ -19,21 +19,14 @@ public class ProyecoPOONetBeans {
      */
     public static void main(String[] args) {
 
-        BaseDeDatos miBD = new BaseDeDatos("localhost:3306", "root", "cometota", "biblioteca");
-        miBD.conectar();
-        //BIEN  miBD.insertarTelefono("1", "1111"); 
-        //BIEN miBD.actualizarTelefono("1", "12345", "2", "2222");
-        //BIEN miBD.borrarTelefono(2, "2222");
-        try {
-        ArrayList<Telefono> telefonos = miBD.obtenerTelefonosPorId(1);            
-        } catch(Exception e) {
-            System.out.println("No se pudo");
+        ConexionBD conexion = new ConexionBD();
+        conexion.conectar();
+        ConsultasTelefono consulta = new ConsultasTelefono();
+        
+        ArrayList<Telefono> telefonos = consulta.obtenerListaTelefonos();
+        for(Telefono tel : telefonos) {
+            System.out.println(tel.getId_usuario() + " " + tel.getTelefono());
         }
-        
-        //BIEN ArrayList<Telefono> telefonos = miBD.obtenerTodoTelefono();
-
-        
-        miBD.cerrarConexion();
     }
      
     
