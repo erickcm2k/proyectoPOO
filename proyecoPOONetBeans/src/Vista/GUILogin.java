@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jahaziel
@@ -16,6 +20,10 @@ public class GUILogin extends javax.swing.JFrame {
 	 */
 	public GUILogin() {
 		initComponents();
+		ponerIconos();
+		
+		//Centrar JFrame
+		this.setLocationRelativeTo(null);
 	}
 
 	/**
@@ -25,17 +33,142 @@ public class GUILogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        atrasJframe = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        contenidoJFrame = new javax.swing.JPanel();
+        ingredarJFrame = new javax.swing.JPanel();
+        lbUsuario = new javax.swing.JLabel();
+        lbUsuarioIcono = new javax.swing.JLabel();
+        lbContrasena = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        btnIngresar = new javax.swing.JButton();
+        lbContrasenaIcono = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Administacion Biblotecaria SIB");
+
+        atrasJframe.setBackground(new java.awt.Color(102, 255, 204));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Iniciar Sesión");
+
+        contenidoJFrame.setBackground(new java.awt.Color(255, 255, 255));
+
+        ingredarJFrame.setBackground(new java.awt.Color(102, 255, 204));
+        ingredarJFrame.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lbUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lbUsuario.setText("Usuario:");
+
+        lbContrasena.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        lbContrasena.setText("Contraseña:");
+
+        txtUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
+
+        password.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(0, 0, 0));
+
+        btnIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        btnIngresar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(102, 255, 204));
+        btnIngresar.setText("Ingresar");
+
+        javax.swing.GroupLayout ingredarJFrameLayout = new javax.swing.GroupLayout(ingredarJFrame);
+        ingredarJFrame.setLayout(ingredarJFrameLayout);
+        ingredarJFrameLayout.setHorizontalGroup(
+            ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ingredarJFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ingredarJFrameLayout.createSequentialGroup()
+                        .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ingredarJFrameLayout.createSequentialGroup()
+                                .addComponent(lbContrasenaIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbContrasena)
+                                .addGap(18, 18, 18))
+                            .addGroup(ingredarJFrameLayout.createSequentialGroup()
+                                .addComponent(lbUsuarioIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(lbUsuario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ingredarJFrameLayout.createSequentialGroup()
+                        .addComponent(btnIngresar)
+                        .addContainerGap())))
+        );
+        ingredarJFrameLayout.setVerticalGroup(
+            ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ingredarJFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbUsuarioIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbUsuario)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ingredarJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbContrasenaIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbContrasena))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnIngresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout contenidoJFrameLayout = new javax.swing.GroupLayout(contenidoJFrame);
+        contenidoJFrame.setLayout(contenidoJFrameLayout);
+        contenidoJFrameLayout.setHorizontalGroup(
+            contenidoJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenidoJFrameLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(ingredarJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        contenidoJFrameLayout.setVerticalGroup(
+            contenidoJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoJFrameLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(ingredarJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+
+        javax.swing.GroupLayout atrasJframeLayout = new javax.swing.GroupLayout(atrasJframe);
+        atrasJframe.setLayout(atrasJframeLayout);
+        atrasJframeLayout.setHorizontalGroup(
+            atrasJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(contenidoJFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(atrasJframeLayout.createSequentialGroup()
+                .addGap(193, 193, 193)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        atrasJframeLayout.setVerticalGroup(
+            atrasJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(atrasJframeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(contenidoJFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(atrasJframe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(atrasJframe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,7 +209,37 @@ public class GUILogin extends javax.swing.JFrame {
 			}
 		});
 	}
+	
+	/*
+	***************Pone iconos a la interface*****************
+	*/
+	public void ponerIconos(){
+		//Conexion de Imagen al Icono
+		ImageIcon iconoUsuario= new ImageIcon(getClass().getResource("/icono/usuario.png"));
+		ImageIcon iconoContrasena= new ImageIcon(getClass().getResource("/icono/contraseña.png"));
+		//Asignacion del tamaño
+		Icon fondo1 = new ImageIcon(iconoUsuario.getImage().getScaledInstance(lbUsuarioIcono.getWidth(),lbUsuarioIcono.getHeight(),Image.SCALE_DEFAULT));
+		Icon fondo2 = new ImageIcon(iconoContrasena.getImage().getScaledInstance(lbContrasenaIcono.getWidth(),lbContrasenaIcono.getHeight(),Image.SCALE_DEFAULT));
+		
+		//Asignacion al Label
+		lbUsuarioIcono.setIcon(fondo1);
+		lbContrasenaIcono.setIcon(fondo2);
+		
+		//Mostrar
+		this.repaint();
+	} 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel atrasJframe;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JPanel contenidoJFrame;
+    private javax.swing.JPanel ingredarJFrame;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbContrasena;
+    private javax.swing.JLabel lbContrasenaIcono;
+    private javax.swing.JLabel lbUsuario;
+    private javax.swing.JLabel lbUsuarioIcono;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
