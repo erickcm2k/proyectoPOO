@@ -38,8 +38,8 @@ CREATE TABLE persona( -- (1) -> Profesor, (2) -> Alumno, (3) -> Empleado
     apellido_materno VARCHAR(30),
     fecha_nacimiento DATE,
     domicilio VARCHAR(30), -- Termina clase Persona
-    horario_entrada_empleado DATE, -- Exclusivo de (3)
-    horario_salida_empleado DATE, -- Exclusivo de (3)
+    horario_entrada_empleado INT, -- Exclusivo de (3)
+    horario_salida_empleado INT, -- Exclusivo de (3)
     clave_acceso_empleado INT, -- Exclusivo de (3)
     clave INT,
     nombre_usuario VARCHAR(30), -- Termina clase Usuario
@@ -55,7 +55,6 @@ CREATE TABLE telefono(
 
 CREATE TABLE materia(
     id INT,
-    nivel INT,
     nombre VARCHAR(30)
 );
 
