@@ -14,11 +14,11 @@ import java.util.ArrayList;
  */
 public class Alumno extends Usuario{
     //Atributos del alumno
-    private String boleta;
+    private int boleta;
     private String nivel;
     
     //Constructor por parametros
-    public Alumno(String boleta, String nivel, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario){    
+    public Alumno(int boleta, String nivel, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario){    
         super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefono, claveAcceso, nombreUsuario);
         this.boleta = boleta;
         this.nivel = nivel;
@@ -57,8 +57,16 @@ public class Alumno extends Usuario{
     ***************Getters y Setters****************
     */
 
-    public String getBoleta() {
+    public int getBoleta() {
         return boleta;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setBoleta(int boleta) {
+        this.boleta = boleta;
     }
 
     

@@ -11,11 +11,11 @@ package Modelo;
  */
 class MaterialElectronico extends Material{
     //Atributos del Material Electronico
-    private int paginaDescarga;
+    private String paginaDescarga;
     private int claveTemporal;
 
     //Constructor por paramtros
-    public MaterialElectronico(int paginaDescarga, int claveTemporal, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
+    public MaterialElectronico(String paginaDescarga, int claveTemporal, int id, String titulo, String autor, int anio, String areaConocimiento, int numEjemplares) {
         super(id, titulo, autor, anio, areaConocimiento, numEjemplares);
         this.paginaDescarga = paginaDescarga;
         this.claveTemporal = claveTemporal;
@@ -25,11 +25,11 @@ class MaterialElectronico extends Material{
     ***********************Getters t Setters de Material Eñectronico **************
     */
 
-    public int getPaginaDescarga() {
+    public String getPaginaDescarga() {
         return paginaDescarga;
     }
 
-    public void setPaginaDescarga(int paginaDescarga) {
+    public void setPaginaDescarga(String paginaDescarga) {
         this.paginaDescarga = paginaDescarga;
     }
 

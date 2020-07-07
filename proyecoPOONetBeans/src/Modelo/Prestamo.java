@@ -17,15 +17,31 @@ public class Prestamo {
     private Date fechaDevolucion;
     private double multa;
     private ArrayList<Material> material;
+    private Usuario usuario;
     
+    /*
+    *************************************Constructor********************************************
+    */    public Prestamo(Date fechaPrestamo, Date fechaDevolucion, double multa, ArrayList<Material> material, Usuario usuario){
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaDevolucion = fechaDevolucion;
+        this.multa = multa;
+        this.material = material;
+        this.usuario = usuario;
+    }
+
     //Funcion que verifica si el prestamo tiene adeudo
-    public boolean tieneAdeudo(){
-        return fechaDevolucion.compareTo(fechaPrestamo)>=0;
+    public boolean tieneAdeudo() {
+        Date fecha=null;
+        return fechaDevolucion.compareTo(fecha)>=0;
     }
     
     //Ccalucla el costo total del adeudo;
     public double calcularAdeudo(){
         //Modificar
+        Date fecha=null;
+        if(tieneAdeudo()){
+            return fechaDevolucion.compareTo(fecha)*2.5;
+        }
         return 0;
         
     }
@@ -72,7 +88,11 @@ public class Prestamo {
         return material;
     }
 
-    
-    
-    
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }    
 }
