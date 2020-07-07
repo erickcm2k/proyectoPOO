@@ -1,0 +1,33 @@
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (1, 'A Promise', 'Sherye Cowtherd', 1995, 'computación', 44, '732770470-1');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (2, 'Boiling Point (3-4 x jûgatsu)', 'Weston Peyntue', 1992, 'matemáticas', 50, '967939754-8');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (3, 'Introducing Dorothy Dandridge', 'Fulton Manssuer', 1991, 'filosofía', 27, '852569703-6');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (4, 'Congress, The', 'Scotti Pawelczyk', 2000, 'matemáticas', 71, '037766069-8');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (5, 'Jam', 'Rriocard Delacote', 1994, 'arte', 19, '858370032-X');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (6, 'Death of a Salesman', 'Marleah Rodriguez', 1996, 'matemáticas', 50, '647304976-2');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (7, 'The Uninvited Guest', 'Cheri Riddles', 1999, 'filosofía', 64, '623433521-7');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (8, '20,000 Years in Sing Sing', 'Franni Lum', 2000, 'arte', 50, '112949820-4');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (9, 'Calcium Kid, The', 'Joya Proudlock', 1995, 'filosofía', 50, '628696641-2');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (10, 'Mad Max Beyond Thunderdome', 'Thedric Coltan', 1994, 'matemáticas', 37, '344294189-X');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (11, 'Cavemen', 'Chloris Bergstrand', 1998, 'arte', 33, '713880251-X');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (12, 'Brink''s Job, The', 'Nathanael Lunt', 1997, 'arte', 42, '352271243-9');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (13, 'Sea Wolf, The', 'Gloriane Keford', 1995, 'filosofía', 13, '372019867-7');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (14, 'Pusher III: I''m the Angel of Death', 'Dell Czyz', 2000, 'computación', 88, '171998346-1');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (15, 'Pi', 'Ula Gauch', 1997, 'filosofía', 93, '671808244-9');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (16, 'Failan', 'Leigh Mundall', 1996, 'matemáticas', 40, '520860068-4');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (17, 'Second Jungle Book: Mowgli & Baloo, The', 'Eduino Polak', 1996, 'arte', 12, '124699432-1');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (18, 'Cars 2', 'Cesar M''Quharg', 1995, 'arte', 54, '677405111-1');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (19, 'Gate, The', 'Joel Hanne', 1999, 'filosofía', 24, '806035847-2');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (20, 'Riddick', 'Des McIlveen', 1995, 'arte', 19, '285795306-2');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (21, 'Primeval', 'Jana Castagnone', 1996, 'arte', 94, '840966703-7');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (22, 'Sacrificio: Who Betrayed Che Guevara', 'Roseanne Ohms', 1993, 'matemáticas', 32, '979386771-X');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (23, 'If These Walls Could Talk', 'Dwayne Weir', 1999, 'arte', 39, '865599379-4');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (24, 'Perfect Storm, The', 'Dierdre Gariff', 1993, 'filosofía', 20, '695178483-3');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (25, 'Caribe', 'Moishe Lamswood', 1993, 'filosofía', 29, '619208313-4');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (26, 'Hit by Lightning', 'Ulysses Lowry', 1993, 'filosofía', 34, '180875072-1');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (27, 'Five Pennies, The', 'Elnore D''Alesco', 1991, 'arte', 41, '909485664-6');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (28, 'My Own Man', 'Lorne Harkins', 1998, 'arte', 74, '619309576-4');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (29, 'Over the Brooklyn Bridge', 'Lawrence Frensche', 1990, 'arte', 45, '231132131-5');
+insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, isbn) values (30, 'Mitchell', 'Candace Conti', 1998, 'matemáticas', 27, '651879656-1');
+
+
+SELECT * FROM material WHERE isbn IS NOT NULL;

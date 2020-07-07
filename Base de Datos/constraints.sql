@@ -33,7 +33,7 @@ ON UPDATE CASCADE;
 
 ALTER TABLE prestamo
 ADD CONSTRAINT prestamo_pkey
-PRIMARY KEY(id, id_persona, id_material);
+PRIMARY KEY(id_persona, id);
 
 
 
@@ -58,18 +58,18 @@ PRIMARY KEY(id_docente, id_materia);
 
 -- Constraints tabla material_prestado
 ALTER TABLE material_prestado
-ADD CONSTRAINT mpid_material_fkey
+ADD CONSTRAINT mpmaterial_fkey
 FOREIGN KEY(id_material) REFERENCES material(id)
 -- ON DELETE SET NULL 
 ON UPDATE CASCADE;
 
 ALTER TABLE material_prestado
 ADD CONSTRAINT mpid_prestamo_fkey
-FOREIGN KEY(id_prestamo) REFERENCES prestamo(id)
+FOREIGN KEY(id_prestamo, id_persona) REFERENCES prestamo(id_persona, id)
 -- ON DELETE SET NULL 
 ON UPDATE CASCADE;
 
 ALTER TABLE material_prestado
 ADD CONSTRAINT material_prestado_pkey
-PRIMARY KEY(id_material, id_prestamo);
+PRIMARY KEY(id_material, id_prestamo, id_persona);
 

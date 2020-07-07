@@ -1,0 +1,12 @@
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (1, 'Charlton', 'Samet', 'Padkin', '2020-03-29', '58 Banding Way', 1, 'cpadkin0', 1);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (2, 'Sergeant', 'Christescu', 'Steels', '2020-02-18', '89 Blue Bill Park Circle', 2, 'ssteels1', 2);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (3, 'Lishe', 'De Bernardis', 'Gonnelly', '2020-06-22', '9717 Hintze Junction', 3, 'lgonnelly2', 3);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (4, 'Brit', 'Baldini', 'Asbury', '2019-07-26', '3448 Riverside Way', 4, 'basbury3', 4);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (5, 'Luce', 'Curzon', 'Heath', '2019-10-21', '6 Sauthoff Plaza', 5, 'lheath4', 5);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (6, 'Timi', 'O''Dee', 'Sicily', '2020-01-02', '62273 Morrow Park', 6, 'tsicily5', 6);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (7, 'Elka', 'MacNeachtain', 'Petrovic', '2020-06-19', '40995 Scofield Hill', 7, 'epetrovic6', 7);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (8, 'Larina', 'Konig', 'Rourke', '2019-10-13', '541 Burrows Trail', 8, 'lrourke7', 8);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (9, 'Mellisent', 'Wickling', 'Flear', '2019-08-19', '2793 Bayside Circle', 9, 'mflear8', 9);
+insert into persona (id, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (10, 'Skyler', 'Vautrey', 'Ledbury', '2020-03-11', '67146 Arapahoe Crossing', 10, 'sledbury9', 10);
+
+SELECT * FROM persona WHERE numero_empleado IS NOT NULL;

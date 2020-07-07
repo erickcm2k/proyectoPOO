@@ -4,7 +4,6 @@ USE biblioteca;
 
 CREATE TABLE material( -- (1) -> Libro, (2) -> Revista, (3) -> Material Electrónico
     id INT,
-    tipo_material VARCHAR(100),
     titulo VARCHAR(100),
     autor VARCHAR(100),
     anio INT,
@@ -19,13 +18,13 @@ CREATE TABLE material( -- (1) -> Libro, (2) -> Revista, (3) -> Material Electró
 
 CREATE TABLE material_prestado(
     id_material INT,
-    id_prestamo INT
+    id_prestamo INT,
+    id_persona INT
 );
 
 CREATE TABLE prestamo(
     id INT,
     id_persona INT,
-    id_material INT,
     fecha_prestamo DATE,
     fecha_devolucion DATE,
     multa DOUBLE
@@ -50,7 +49,7 @@ CREATE TABLE persona( -- (1) -> Profesor, (2) -> Alumno, (3) -> Empleado
 
 CREATE TABLE telefono(
     id_persona INT,
-    telefono VARCHAR(10)
+    telefono VARCHAR(100)
 );
 
 CREATE TABLE materia(
