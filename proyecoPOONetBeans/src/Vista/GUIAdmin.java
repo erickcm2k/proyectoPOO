@@ -139,6 +139,12 @@ public class GUIAdmin extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jPPrestamo = new javax.swing.JPanel();
+        jBSesionPre = new javax.swing.JButton();
+        jBCambiarPr = new javax.swing.JButton();
+        jBBajaPre = new javax.swing.JButton();
+        jBAltaPre = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administracion de la Bibloteca");
@@ -891,15 +897,66 @@ public class GUIAdmin extends javax.swing.JFrame {
 
         jTPGeneral.addTab("Material", jPMaterial);
 
+        jBSesionPre.setText("Cerrar Sesión");
+
+        jBCambiarPr.setText("Cambiar");
+
+        jBBajaPre.setText("Dar Baja");
+
+        jBAltaPre.setText("Dar Alta");
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jLabel13.setText("Fecha");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPPrestamoLayout = new javax.swing.GroupLayout(jPPrestamo);
         jPPrestamo.setLayout(jPPrestamoLayout);
         jPPrestamoLayout.setHorizontalGroup(
             jPPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPPrestamoLayout.createSequentialGroup()
+                .addContainerGap(271, Short.MAX_VALUE)
+                .addComponent(jBAltaPre)
+                .addGap(18, 18, 18)
+                .addComponent(jBCambiarPr)
+                .addGap(18, 18, 18)
+                .addComponent(jBBajaPre)
+                .addGap(136, 136, 136)
+                .addComponent(jBSesionPre)
+                .addContainerGap())
+            .addGroup(jPPrestamoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPPrestamoLayout.setVerticalGroup(
             jPPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
+            .addGroup(jPPrestamoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addGroup(jPPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBSesionPre)
+                    .addComponent(jBCambiarPr)
+                    .addComponent(jBBajaPre)
+                    .addComponent(jBAltaPre))
+                .addContainerGap())
         );
 
         jTPGeneral.addTab("Prestamo", jPPrestamo);
@@ -968,10 +1025,14 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JButton cerrarSesionP1;
     private javax.swing.JComboBox<String> comboNivel;
     private javax.swing.JButton jBAlta;
+    private javax.swing.JButton jBAltaPre;
     private javax.swing.JButton jBBaja;
+    private javax.swing.JButton jBBajaPre;
     private javax.swing.JButton jBCambiar;
+    private javax.swing.JButton jBCambiarPr;
     private javax.swing.JButton jBCambio;
     private javax.swing.JButton jBCerrar;
+    private javax.swing.JButton jBSesionPre;
     private javax.swing.JButton jBaja;
     private javax.swing.JButton jBuAlta;
     private javax.swing.JButton jButton1;
@@ -1016,6 +1077,7 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1043,6 +1105,7 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
