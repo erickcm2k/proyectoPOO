@@ -104,6 +104,6 @@ public abstract class Persona {
     public void setClaveAcceso(String claveAcceso) {
         this.claveAcceso = claveAcceso;
     }
-    
+	
     
 }

@@ -21,7 +21,8 @@ public class Prestamo {
     
     /*
     *************************************Constructor********************************************
-    */    public Prestamo(Date fechaPrestamo, Date fechaDevolucion, double multa, ArrayList<Material> material, Usuario usuario){
+    */
+	public Prestamo(Date fechaPrestamo, Date fechaDevolucion, double multa, ArrayList<Material> material, Usuario usuario){
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
         this.multa = multa;
@@ -31,7 +32,9 @@ public class Prestamo {
 
     //Funcion que verifica si el prestamo tiene adeudo
     public boolean tieneAdeudo() {
-        Date fecha=null;
+        Date fecha;
+		fecha = new Date(0);
+		fecha.getDate();
         return fechaDevolucion.compareTo(fecha)>=0;
     }
     

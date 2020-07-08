@@ -46,7 +46,7 @@ public class GUIAdmin extends javax.swing.JFrame {
         txtApellidoMaterno = new javax.swing.JTextField();
         txtApellidoPaterno1 = new javax.swing.JTextField();
         txtDomicilio = new javax.swing.JTextField();
-        jDFechaP = new com.toedter.calendar.JDateChooser();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableTelefonos = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -78,7 +78,7 @@ public class GUIAdmin extends javax.swing.JFrame {
         txtApellidoMaternoP = new javax.swing.JTextField();
         txtApellidoPaternoP = new javax.swing.JTextField();
         txtDomicilioP = new javax.swing.JTextField();
-        jDFechaA = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableTelefonosP = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -181,7 +181,7 @@ public class GUIAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(49, 49, 49)
                         .addGroup(jPDatosGenerralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                             .addComponent(txtApellidoPaterno1)
                             .addComponent(txtApellidoMaterno)))
                     .addGroup(jPDatosGenerralesLayout.createSequentialGroup()
@@ -191,7 +191,7 @@ public class GUIAdmin extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPDatosGenerralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDomicilio)
-                            .addComponent(jDFechaP, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPDatosGenerralesLayout.setVerticalGroup(
@@ -213,10 +213,10 @@ public class GUIAdmin extends javax.swing.JFrame {
                 .addGroup(jPDatosGenerralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(jPDatosGenerralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(jDFechaP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPDatosGenerralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -419,7 +419,7 @@ public class GUIAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(49, 49, 49)
                         .addGroup(jPDatosGenerrales1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombreP)
+                            .addComponent(txtNombreP, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                             .addComponent(txtApellidoMaternoP, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtApellidoPaternoP)))
                     .addGroup(jPDatosGenerrales1Layout.createSequentialGroup()
@@ -429,7 +429,7 @@ public class GUIAdmin extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPDatosGenerrales1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDomicilioP)
-                            .addComponent(jDFechaA, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))))
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPDatosGenerrales1Layout.setVerticalGroup(
@@ -454,8 +454,8 @@ public class GUIAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPDatosGenerrales1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jDFechaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(jPDatosGenerrales1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(txtDomicilioP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1050,27 +1050,19 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
-    private com.toedter.calendar.JDateChooser jDFechaA;
-    private com.toedter.calendar.JDateChooser jDFechaP;
-    private javax.swing.JLabel jLAnio;
-    private javax.swing.JLabel jLAnio1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLAnio3;
-    private javax.swing.JLabel jLAutor;
-    private javax.swing.JLabel jLAutor1;
     private javax.swing.JLabel jLAutor3;
     private javax.swing.JLabel jLBoleta;
     private javax.swing.JLabel jLClave;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLFoto1;
-    private javax.swing.JLabel jLID;
-    private javax.swing.JLabel jLID1;
     private javax.swing.JLabel jLID3;
     private javax.swing.JLabel jLISBN;
     private javax.swing.JLabel jLNivel;
     private javax.swing.JLabel jLNumEmpleado;
     private javax.swing.JLabel jLNumero;
-    private javax.swing.JLabel jLTitulo;
-    private javax.swing.JLabel jLTitulo1;
     private javax.swing.JLabel jLTitulo3;
     private javax.swing.JLabel jLVolumen;
     private javax.swing.JLabel jLabel1;
@@ -1078,11 +1070,7 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1100,8 +1088,6 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPMaterial;
     private javax.swing.JPanel jPPrestamo;
     private javax.swing.JPanel jPProfesor;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1121,18 +1107,12 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JTable jTableTelefonos;
     private javax.swing.JTable jTableTelefonosP;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField txtAnio;
-    private javax.swing.JTextField txtAnio1;
     private javax.swing.JTextField txtAnio3;
     private javax.swing.JTextField txtApellidoMaterno;
     private javax.swing.JTextField txtApellidoMaternoP;
     private javax.swing.JTextField txtApellidoPaterno1;
     private javax.swing.JTextField txtApellidoPaternoP;
-    private javax.swing.JTextField txtArea;
-    private javax.swing.JTextField txtArea1;
     private javax.swing.JTextField txtArea3;
-    private javax.swing.JTextField txtAutor;
-    private javax.swing.JTextField txtAutor1;
     private javax.swing.JTextField txtAutor3;
     private javax.swing.JTextField txtBoleta;
     private javax.swing.JTextField txtBoleta1;
@@ -1142,18 +1122,12 @@ public class GUIAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtDomicilio;
     private javax.swing.JTextField txtDomicilioP;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
     private javax.swing.JTextField txtID3;
     private javax.swing.JTextField txtISBN;
     private javax.swing.JTextField txtNivel;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombreP;
-    private javax.swing.JTextField txtNumEjemplares;
-    private javax.swing.JTextField txtNumEjemplares1;
     private javax.swing.JTextField txtNumero;
-    private javax.swing.JTextField txtTitulo;
-    private javax.swing.JTextField txtTitulo1;
     private javax.swing.JTextField txtTitulo3;
     private javax.swing.JTextField txtURL;
     private javax.swing.JTextField txtVolumen;

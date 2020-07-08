@@ -159,7 +159,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtNombre" max="32767" attributes="0"/>
+                                      <Component id="txtNombre" pref="199" max="32767" attributes="0"/>
                                       <Component id="txtApellidoPaterno1" max="32767" attributes="0"/>
                                       <Component id="txtApellidoMaterno" alignment="0" max="32767" attributes="0"/>
                                   </Group>
@@ -172,7 +172,7 @@
                                   <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtDomicilio" max="32767" attributes="0"/>
-                                      <Component id="jDFechaP" pref="199" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -204,10 +204,10 @@
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtApellidoMaterno" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDFechaP" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -256,7 +256,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDomicilioActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDFechaP">
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
                 </Component>
               </SubComponents>
             </Container>
@@ -559,7 +559,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtNombreP" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtNombreP" alignment="0" pref="192" max="32767" attributes="0"/>
                                       <Component id="txtApellidoMaternoP" alignment="1" max="32767" attributes="0"/>
                                       <Component id="txtApellidoPaternoP" alignment="0" max="32767" attributes="0"/>
                                   </Group>
@@ -572,7 +572,7 @@
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtDomicilioP" max="32767" attributes="0"/>
-                                      <Component id="jDFechaA" pref="192" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -607,9 +607,9 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDFechaA" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtDomicilioP" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -653,7 +653,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtDomicilioP">
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDFechaA">
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
                 </Component>
               </SubComponents>
             </Container>

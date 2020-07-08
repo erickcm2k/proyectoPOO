@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import Modelo.*;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -18,11 +20,12 @@ import javax.swing.JPanel;
 public class GUILogin extends javax.swing.JFrame {
 	//Atributo 
 	Fondo fondo1 = new Fondo();
+	ArrayList<Persona> personas;
 
 	/**
 	 * Creates new form GUILoggin
 	 */
-	public GUILogin() {
+	public GUILogin(ArrayList<Persona> personas) {
 		//Pesonalizar JFrame
 		this.setContentPane(fondo1);
 		
@@ -30,8 +33,16 @@ public class GUILogin extends javax.swing.JFrame {
 		initComponents();
 		ponerIconos();
 		
+		//Pasa Datos
+		this.personas = personas;
+		
 		//Localizar JFrame
 		this.setLocationRelativeTo(null);
+		
+	}
+
+	private GUILogin() {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	/**
@@ -79,6 +90,11 @@ public class GUILogin extends javax.swing.JFrame {
         btnIngresar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(102, 255, 204));
         btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ingredarJFrameLayout = new javax.swing.GroupLayout(ingredarJFrame);
         ingredarJFrame.setLayout(ingredarJFrameLayout);
@@ -150,6 +166,13 @@ public class GUILogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+		// TODO add your handling code here:
+		for (Persona p : personas) {
+			//if(p.equals(persona))
+		}
+    }//GEN-LAST:event_btnIngresarActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -185,7 +208,7 @@ public class GUILogin extends javax.swing.JFrame {
 		//</editor-fold>
 
 		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
+		java.awt.EventQueue.invokeLater(new Runnable() {			
 			public void run() {
 				new GUILogin().setVisible(true);
 			}
@@ -197,8 +220,8 @@ public class GUILogin extends javax.swing.JFrame {
 	*/
 	public void ponerIconos(){
 		//Conexion de Imagen al Icono
-		ImageIcon iconoUsuario= new ImageIcon(getClass().getResource("/icono/usuario.png"));
-		ImageIcon iconoContrasena= new ImageIcon(getClass().getResource("/icono/contraseña.png"));
+		ImageIcon iconoUsuario= new ImageIcon(getClass().getResource("Imagenes/usuario.png"));
+		ImageIcon iconoContrasena= new ImageIcon(getClass().getResource("Imagenes/contraseña.png"));
 		//Asignacion del tamaño
 		Icon fondo1 = new ImageIcon(iconoUsuario.getImage().getScaledInstance(lbUsuarioIcono.getWidth(),lbUsuarioIcono.getHeight(),Image.SCALE_DEFAULT));
 		Icon fondo2 = new ImageIcon(iconoContrasena.getImage().getScaledInstance(lbContrasenaIcono.getWidth(),lbContrasenaIcono.getHeight(),Image.SCALE_DEFAULT));
@@ -221,7 +244,7 @@ public class GUILogin extends javax.swing.JFrame {
 		//Metodos
 		@Override
 		public void paint(Graphics g){
-			imagen = new ImageIcon(getClass().getResource("/icono/fondo.png")).getImage();
+			imagen = new ImageIcon(getClass().getResource("Imagenes/fondo.png")).getImage();
 			g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 			setOpaque(false);
 			super.paint(g);

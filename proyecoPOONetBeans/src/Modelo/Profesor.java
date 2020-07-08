@@ -50,6 +50,6 @@ public class Profesor extends Usuario{
     public void setMateriasImparte(ArrayList<String> materiasImparte) {
         this.materiasImparte = materiasImparte;
     }
-    
+	
     
 }
