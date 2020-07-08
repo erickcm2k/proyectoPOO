@@ -13,30 +13,33 @@ import java.util.ArrayList;
  */
 public class Prestamo {
     //Atributos del Prestamo
+	private int identificador;
     private Date fechaPrestamo;
     private Date fechaDevolucion;
     private double multa;
     private ArrayList<Material> material;
     private Usuario usuario;
+	
     
     /*
     *************************************Constructor********************************************
-    */
-	public Prestamo(Date fechaPrestamo, Date fechaDevolucion, double multa, ArrayList<Material> material, Usuario usuario){
-        this.fechaPrestamo = fechaPrestamo;
-        this.fechaDevolucion = fechaDevolucion;
-        this.multa = multa;
-        this.material = material;
-        this.usuario = usuario;
+    */ 
+	public Prestamo(int identificador, Date fechaPrestamo, Date fechaDevolucion, double multa, ArrayList<Material> material, Usuario usuario) {
+		this.identificador = identificador;
+		this.fechaPrestamo = fechaPrestamo;
+		this.fechaDevolucion = fechaDevolucion;
+		this.multa = multa;
+		this.material = material;
+		this.usuario = usuario;
     }
 
-    //Funcion que verifica si el prestamo tiene adeudo
-    public boolean tieneAdeudo() {
-        Date fecha;
+	//Funcion que verifica si el prestamo tiene adeudo
+	public boolean tieneAdeudo() {
+		Date fecha;
 		fecha = new Date(0);
 		fecha.getDate();
-        return fechaDevolucion.compareTo(fecha)>=0;
-    }
+		return fechaDevolucion.compareTo(fecha)>=0;
+	}
     
     //Ccalucla el costo total del adeudo;
     public double calcularAdeudo(){
@@ -98,4 +101,14 @@ public class Prestamo {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }    
+
+	public int getIdentificador() {
+		return identificador;
+	}
+
+	public void setIdentificador(int identificador) {
+		this.identificador = identificador;
+	}
+	
+	
 }
