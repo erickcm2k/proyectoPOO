@@ -38,5 +38,8 @@ public class Revista extends Material{
         return volumen;
     }
     
+    public void setVolumen(int volumen) {
+        this.volumen = volumen;
+    }
     
 }

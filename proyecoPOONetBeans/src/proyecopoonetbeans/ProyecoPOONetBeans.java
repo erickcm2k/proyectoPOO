@@ -18,13 +18,6 @@ public class ProyecoPOONetBeans {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-       ConsultasMElectronico mel = new ConsultasMElectronico();
-       
-       ArrayList<MaterialElectronico> mes = mel.obtenerListaMaterialesElectronicos();
-       for(MaterialElectronico materialE : mes) {
-           System.out.println(materialE.getPaginaDescarga());
-       }
 
     }
      
