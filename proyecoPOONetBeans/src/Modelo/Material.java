@@ -66,6 +66,34 @@ public abstract class Material {
         return areaConocimiento;
     }
     
+    public int getNumEjemplares() {
+        return numEjemplares;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public void setAreaConocimiento(String areaConocimiento) {
+        this.areaConocimiento = areaConocimiento;
+    }
+
+    public void setNumEjemplares(int numEjemplares) {
+        this.numEjemplares = numEjemplares;
+    }
+    
     
     
     

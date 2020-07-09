@@ -18,15 +18,12 @@ public class ProyecoPOONetBeans {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        ConexionBD conexion = new ConexionBD();
-        conexion.conectar();
-        ConsultasTelefono consulta = new ConsultasTelefono();
-        
-        ArrayList<Telefono> telefonos = consulta.obtenerListaTelefonos();
-        for(Telefono tel : telefonos) {
-            System.out.println(tel.getId_usuario() + " " + tel.getTelefono());
-        }
+        Libro libro = new Libro(1234, "Libro 1234", "autor1", 2000, "area1", 100, "12345");
+        ConsultasLibro conLib = new ConsultasLibro();
+  
+        Libro libroNuevo = conLib.obtenerLibroPorId(10);
+        System.out.println(libroNuevo.getIsbn());
+   
     }
      
     

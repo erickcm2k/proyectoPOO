@@ -29,4 +29,4 @@ insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejempla
 insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, volumen, numero) values (59, 'Open-architected even-keeled capacity', 'Bifrost School of Business', 2016, 'arte', 88, 32, 6);
 insert into material (id, titulo, autor, anio, area_conocimiento, numero_ejemplares, volumen, numero) values (60, 'User-centric cohesive project', 'Alabama State University', 1997, 'filosofía', 20, 21, 56);
 
-SELECT * FROM MATERIAL WHERE volumen IS NOT NULL AND numero IS NOT NULL;
+    SELECT * FROM MATERIAL WHERE volumen IS NOT NULL AND numero IS NOT NULL;
