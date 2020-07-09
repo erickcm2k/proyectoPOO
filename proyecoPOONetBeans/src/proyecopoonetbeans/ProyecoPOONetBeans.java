@@ -18,12 +18,14 @@ public class ProyecoPOONetBeans {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Libro libro = new Libro(1234, "Libro 1234", "autor1", 2000, "area1", 100, "12345");
-        ConsultasLibro conLib = new ConsultasLibro();
-  
-        Libro libroNuevo = conLib.obtenerLibroPorId(10);
-        System.out.println(libroNuevo.getIsbn());
-   
+        
+       ConsultasMElectronico mel = new ConsultasMElectronico();
+       
+       ArrayList<MaterialElectronico> mes = mel.obtenerListaMaterialesElectronicos();
+       for(MaterialElectronico materialE : mes) {
+           System.out.println(materialE.getPaginaDescarga());
+       }
+
     }
      
     

@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author Jahaziel
  */
-class MaterialElectronico extends Material{
+public class MaterialElectronico extends Material{
     //Atributos del Material Electronico
     private String paginaDescarga;
     private int claveTemporal;
