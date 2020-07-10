@@ -138,7 +138,6 @@ insert into telefono (id_persona, telefono) values (137, '95949440');
 insert into telefono (id_persona, telefono) values (138, '22128116');
 insert into telefono (id_persona, telefono) values (139, '63004949');
 insert into telefono (id_persona, telefono) values (140, '31363241');
-
 insert into telefono (id_persona, telefono) values (42, '09089461');
 insert into telefono (id_persona, telefono) values (64, '89483928');
 insert into telefono (id_persona, telefono) values (138, '11578323');

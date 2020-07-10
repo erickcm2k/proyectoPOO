@@ -37,10 +37,9 @@ CREATE TABLE persona( -- (1) -> Profesor, (2) -> Alumno, (3) -> Empleado
     apellido_materno VARCHAR(100),
     fecha_nacimiento DATE,
     domicilio VARCHAR(100), -- Termina clase Persona
-    horario_entrada_empleado INT, -- Exclusivo de (3)
-    horario_salida_empleado INT, -- Exclusivo de (3)
-    clave_acceso_empleado INT, -- Exclusivo de (3)
-    clave INT,
+    horario_entrada_empleado VARCHAR(10), -- Exclusivo de (3)
+    horario_salida_empleado VARCHAR(10), -- Exclusivo de (3)
+    clave VARCHAR(100),
     nombre_usuario VARCHAR(100), -- Termina clase Usuario
     numero_empleado VARCHAR(100), -- Exclusivo de (1)
     boleta_alumno INT, -- Exclusivo de (2)
