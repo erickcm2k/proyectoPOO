@@ -62,4 +62,5 @@ public class Empleado extends Persona{
         this.horaSalida = horaSalida;
     }
     
+	
 }
