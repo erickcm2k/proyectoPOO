@@ -1,8 +1,3 @@
--- Constraints tabla persona
-ALTER TABLE persona
-ADD CONSTRAINT persona_pkey
-PRIMARY KEY(id);
-
 -- Constraints tabla teléfono
 ALTER TABLE telefono
 ADD CONSTRAINT pid_persona_fkey
