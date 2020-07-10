@@ -122,7 +122,7 @@ public class ConsultasEmpleado  extends ConexionBD{
             }
             return empleado;
         } catch(SQLException e) {
-            System.out.println("Error en la consulta SELECT de Libro.");
+            System.out.println("Error en la consulta SELECT de Empleado.");
         }
         return null;        
     }          

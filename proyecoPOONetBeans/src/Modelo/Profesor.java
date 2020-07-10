@@ -51,5 +51,14 @@ public class Profesor extends Usuario{
 		this.numEmpleado = numEmpleado;
 	}
 	
+	//Borrar
+
+	public Profesor(int numEmpleado, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, String claveAcceso, String nombreUsuario) {
+		super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
+		this.numEmpleado = numEmpleado;
+	}
+
+	
+	
     
 }

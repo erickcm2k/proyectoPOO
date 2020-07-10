@@ -28,4 +28,10 @@ public abstract class Usuario extends Persona{
         
     }
    
+	//BOrrrar
+
+	public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, String claveAcceso, String nombreUsuario) {
+		super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
+	}
+	
 }

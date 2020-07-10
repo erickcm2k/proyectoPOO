@@ -69,6 +69,15 @@ public class Alumno extends Usuario{
         this.boleta = boleta;
     }
 
+		
+	//Borrar
+
+	public Alumno(int boleta, String nivel, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, String claveAcceso, String nombreUsuario) {
+		super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
+		this.boleta = boleta;
+		this.nivel = nivel;
+	}
+	
     
     
 }
