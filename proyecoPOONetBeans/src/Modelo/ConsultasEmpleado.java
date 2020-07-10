@@ -44,7 +44,7 @@ public boolean registrarEmpleado(Empleado empl) {
         return false;
     }
     
-    public boolean modificarLibro(Empleado empl, Empleado nuevoempl) {
+    public boolean modificarEmpleado(Empleado empl, Empleado nuevoempl) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
