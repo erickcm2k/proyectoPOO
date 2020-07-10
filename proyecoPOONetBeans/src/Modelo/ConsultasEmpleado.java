@@ -26,6 +26,7 @@ public boolean registrarEmpleado(Empleado empl) {
         
         try {
             pst = con.prepareStatement(sql);
+			//Buscar como obtener el ultimo id;
            // pst.setInt(1, lib.getId());
             pst.setString(2, empl.getNombre());
             pst.setString(3, empl.getApellidoPaterno());
@@ -48,7 +49,7 @@ public boolean registrarEmpleado(Empleado empl) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
-        String sql = "update material set nombre=?, apellido_paterno=?, apellido_materno=?, fecha_nacimiento=?, domicilio=?, nombre_usuario=?,clave=?,horaio_entrada_empleado=?,horaio_salida_empleado=? where id=?";
+        String sql = "update persona set nombre=?, apellido_paterno=?, apellido_materno=?, fecha_nacimiento=?, domicilio=?, nombre_usuario=?,clave=?,horaio_entrada_empleado=?,horaio_salida_empleado=? where id=?";
         try {
             pst = con.prepareStatement(sql);
             
@@ -69,11 +70,11 @@ public boolean registrarEmpleado(Empleado empl) {
         return false;
     }    
     
-    public boolean borrarLibro(Libro lib) {
+    public boolean borrarEmpleado(Empleado Empl) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
-        String sql = "DELETE FROM material WHERE id=?";
+        String sql = "DELETE FROM persona WHERE id=?";
         
         try {
             pst = con.prepareStatement(sql);
@@ -81,7 +82,7 @@ public boolean registrarEmpleado(Empleado empl) {
             pst.execute();
             return true;
         } catch(SQLException e) {
-            System.out.println("Error en la consulta DELETE de Libro.");
+            System.out.println("Error en la consulta DELETE del Empleado.");
         }
         return false;        
     }
