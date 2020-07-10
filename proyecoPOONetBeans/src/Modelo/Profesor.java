@@ -15,16 +15,16 @@ import java.util.ArrayList;
 public class Profesor extends Usuario{
     
     //Atributos de Profesor
-    private String numEmpleado;
+    private int numEmpleado;
     private ArrayList<String> materiasImparte;
     
     //Contructor por parametros
 
-    public Profesor(String numEmpleado, ArrayList<String> materiasImparte, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario) {
-        super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefono, claveAcceso, nombreUsuario);
-        this.numEmpleado = numEmpleado;
-        this.materiasImparte = materiasImparte;
-    }
+	public Profesor(int numEmpleado, ArrayList<String> materiasImparte, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario) {
+		super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefono, claveAcceso, nombreUsuario);
+		this.numEmpleado = numEmpleado;
+		this.materiasImparte = materiasImparte;
+	}
     
     //Añade una materia al arraylist materiasIMparte el profesor
     public void addNateria(String materia){
@@ -35,14 +35,6 @@ public class Profesor extends Usuario{
     ***************Getters y Setters****************
     */
 
-    public String getNumEmpleado() {
-        return numEmpleado;
-    }
-
-    public void setNumEmpleado(String numEmpleado) {
-        this.numEmpleado = numEmpleado;
-    }
-
     public ArrayList<String> getMateriasImparte() {
         return materiasImparte;
     }
@@ -50,6 +42,14 @@ public class Profesor extends Usuario{
     public void setMateriasImparte(ArrayList<String> materiasImparte) {
         this.materiasImparte = materiasImparte;
     }
+
+	public int getNumEmpleado() {
+		return numEmpleado;
+	}
+
+	public void setNumEmpleado(int numEmpleado) {
+		this.numEmpleado = numEmpleado;
+	}
 	
     
 }

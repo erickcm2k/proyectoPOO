@@ -5,7 +5,6 @@
  */
 package Modelo;
 
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -17,25 +16,24 @@ import java.util.ArrayList;
  *
  * @author Jahaziel
  */
-public class ConsultasEmpleado  extends ConexionBD{
-	public boolean registrarEmpleado(Empleado empl) {
+public class ConsultasProfesor extends ConexionBD{
+	public boolean registrarProfesor(Profesor prof) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
-        String sql = "insert into persona(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, nombre_usuario,clave,horario_entrada_empleado,horario_salida_empleado) values (?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into persona(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (?,?,?,?,?,?,?,?)";
 
         
         try {
             pst = con.prepareStatement(sql);
-            pst.setString(1, empl.getNombre());
-            pst.setString(2, empl.getApellidoPaterno());
-            pst.setString(3, empl.getApellidoMaterno());
-            pst.setDate(4,empl.getFechaNacimiento());
-            pst.setString(5,empl.getDomicilio());
-            pst.setString(6, empl.getNombreUsuario());
-			pst.setString(7, empl.getClaveAcceso());
-			pst.setInt(8, empl.getHoraEntrada());
-			pst.setInt(9, empl.getHoraSalida());
+            pst.setString(1, prof.getNombre());
+            pst.setString(2, prof.getApellidoPaterno());
+            pst.setString(3, prof.getApellidoMaterno());
+            pst.setDate(4, prof.getFechaNacimiento());
+            pst.setString(5,prof.getDomicilio());
+            pst.setString(6, prof.getNombreUsuario());
+			pst.setString(7, prof.getClaveAcceso());
+			pst.setInt(8, prof.getNumEmpleado());;
             pst.execute();
             return true;
         } catch(SQLException e) {
@@ -44,7 +42,7 @@ public class ConsultasEmpleado  extends ConexionBD{
         return false;
     }
     
-    public boolean modificarEmpleado(Empleado empl, Empleado nuevoempl) {
+    public boolean modificarProfesor(Profesor prof, Profesor nuevoprof) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
@@ -126,4 +124,5 @@ public class ConsultasEmpleado  extends ConexionBD{
         }
         return null;        
     }          
+	
 }

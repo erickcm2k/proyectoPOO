@@ -62,5 +62,13 @@ public class Empleado extends Persona{
         this.horaSalida = horaSalida;
     }
     
+	//BORRAR
+
+	public Empleado(int horaEntrada, int horaSalida, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, String claveAcceso, String nombreUsuario) {
+		super(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
+		this.horaEntrada = horaEntrada;
+		this.horaSalida = horaSalida;
+	}
+	
 	
 }

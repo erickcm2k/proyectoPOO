@@ -105,5 +105,17 @@ public abstract class Persona {
         this.claveAcceso = claveAcceso;
     }
 	
+	//Borrar
+
+	public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, String claveAcceso, String nombreUsuario) {
+		this.nombre = nombre;
+		this.apellidoPaterno = apellidoPaterno;
+		this.apellidoMaterno = apellidoMaterno;
+		this.fechaNacimiento = fechaNacimiento;
+		this.domicilio = domicilio;
+		this.claveAcceso = claveAcceso;
+		this.nombreUsuario = nombreUsuario;
+	}
+	
     
 }
