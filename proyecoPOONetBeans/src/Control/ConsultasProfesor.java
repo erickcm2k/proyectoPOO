@@ -7,6 +7,7 @@ package Control;
 
 import Control.ConexionBD;
 import Modelo.Profesor;
+import Modelo.Telefono;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -85,137 +86,90 @@ public class ConsultasProfesor extends ConexionBD{
         }
         return false;        
     }
-         
+         	
+	public Profesor obtenerProfesorPorId(int id_profe) {        
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            Connection con = conectar();
+            ConsultasTelefono conBD = new ConsultasTelefono();        
+            ArrayList<Telefono> tels = new ArrayList();
+            ArrayList<String> materiasImparte = new ArrayList(); 
+            String sql = "SELECT * FROM persona where id=?";
 
-    public ArrayList<Profesor> obtenerListaProfesores() {
-        ArrayList<Profesor> profesor = new ArrayList();
-        ResultSet rs = null;
-        PreparedStatement pst = null;
-        Connection con = conectar();
-        
-        String sql = "SELECT * FROM persona WHERE numero_empleado IS NOT NULL;";
-        try {
-            pst = con.prepareStatement(sql);
-            rs = pst.executeQuery();
-            
-            while(rs.next()) {
-				String nombre = rs.getString("nombre");
-				String apellidoPaterno = rs.getString("apellido_paterno");
-				String apellidoMaterno = rs.getString("apellido_materno");
-				Date fechaNacimiento = rs.getDate("fecha_nacimiento");
-				String domicilio = rs.getString("domicilio");
-				//ArrayList<String> telefono;
-				String claveAcceso = rs.getString("clave");
-				String nombreUsuario = rs.getString("nombre_usuario");
-				int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
-                
-                Profesor prof = new Profesor( numEmpleado, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
-                profesor.add(prof);
+            try {
+                pst = con.prepareStatement(sql);
+                pst.setInt(1,id_profe);
+                rs = pst.executeQuery();
+                Profesor me = null;    
+                if(rs.next()) {
+
+                    String nombre = rs.getString("nombre");
+                                    String apellidoPaterno = rs.getString("apellido_paterno");
+                                    String apellidoMaterno = rs.getString("apellido_materno");
+                                    Date fechaNacimiento = Date.valueOf(rs.getString("fecha_nacimiento"));
+                                    String domicilio = rs.getString("domicilio");				
+                                    String claveAcceso = rs.getString("clave");
+                                    String nombreUsuario = rs.getString("nombre_usuario");
+                                    int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));                               
+                                    tels = conBD.obtenerTelefonosPorId(id_profe);
+                                    ArrayList<String> telefonos = new ArrayList();                                
+                                    for(Telefono tel : tels) {
+                                        telefonos.add(tel.getTelefono());
+                                    }
+
+                    me = new Profesor(numEmpleado, materiasImparte, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
+                }
+                return me;
+            } catch(SQLException e) {
+                System.out.println("Error en la consulta SELECT por numero_empleado de Profesor.");
+                e.printStackTrace();
             }
-            return profesor;
-        } catch(SQLException e) {
-            System.out.println("Error en la consulta SELECT de Profesor.");
-        }
-        return null;        
+            return null;        
     } 
 	
-	public Profesor obtenerProfesorNumEmpl(int id_profe) {        
+	public ArrayList<Profesor> obtenerListaProfesores() {        
+        ArrayList<Profesor> profesores = new ArrayList();
         ResultSet rs = null;
         PreparedStatement pst = null;
-        Connection con = conectar();
-        
-        String sql = "SELECT * FROM persona numero_empleado=?";
+        Connection con = conectar();       
+
+        String sql = "SELECT * FROM persona where numero_empleado IS NOT NULL";
         
         try {
             pst = con.prepareStatement(sql);
-            pst.setInt(1,id_profe);
             rs = pst.executeQuery();
-            Profesor me = null;
-            if(rs.next()) {
+
+            while(rs.next()) {       
                 
                 String nombre = rs.getString("nombre");
-				String apellidoPaterno = rs.getString("apellido_paterno");
-				String apellidoMaterno = rs.getString("apellido_materno");
-				Date fechaNacimiento = rs.getDate("fecha_nacimiento");
-				String domicilio = rs.getString("domicilio");
-				//ArrayList<String> telefono;
-				String claveAcceso = rs.getString("clave");
-				String nombreUsuario = rs.getString("nombre_usuario");
-				int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
-                                
-                me = new Profesor( numEmpleado, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
+                int id = Integer.parseInt(rs.getString("id"));
+                String apellidoPaterno = rs.getString("apellido_paterno");
+                String apellidoMaterno = rs.getString("apellido_materno");
+                Date fechaNacimiento = Date.valueOf(rs.getString("fecha_nacimiento"));
+                String domicilio = rs.getString("domicilio");				
+                String claveAcceso = rs.getString("clave");
+                String nombreUsuario = rs.getString("nombre_usuario");
+                int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));                   
+                ConsultasTelefono conTel = new ConsultasTelefono();
+                ArrayList<Telefono> tels = new ArrayList();
+                ArrayList<String> telefonos = new ArrayList();                
+                tels = conTel.obtenerTelefonosPorId(id);
+                ArrayList<String> materiasImparte = new ArrayList();                                                                                    
+                for(Telefono tel : tels) {
+                   telefonos.add(tel.getTelefono());                   
+                }           
+
+                Profesor prof = new Profesor(numEmpleado, materiasImparte, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
+                profesores.add(prof);
             }
-            return me;
+            return profesores;
+            
         } catch(SQLException e) {
             System.out.println("Error en la consulta SELECT por numero_empleado de Profesor.");
+            e.printStackTrace();
         }
         return null;        
-    } 
-	
-	public Profesor obtenerProfesorNombre(String nombreP) {        
-        ResultSet rs = null;
-        PreparedStatement pst = null;
-        Connection con = conectar();
+    }         
         
-        String sql = "SELECT * FROM persona nombre= ? and numero_empleado IS NOT NULL";
-        
-        try {
-            pst = con.prepareStatement(sql);
-            pst.setString(1,nombreP);
-            rs = pst.executeQuery();
-            Profesor me = null;
-            if(rs.next()) {
-                
-                String nombre = rs.getString("nombre");
-				String apellidoPaterno = rs.getString("apellido_paterno");
-				String apellidoMaterno = rs.getString("apellido_materno");
-				Date fechaNacimiento = rs.getDate("fecha_nacimiento");
-				String domicilio = rs.getString("domicilio");
-				//ArrayList<String> telefono;
-				String claveAcceso = rs.getString("clave");
-				String nombreUsuario = rs.getString("nombre_usuario");
-				int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
-                                
-                me = new Profesor( numEmpleado, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
-            }
-            return me;
-        } catch(SQLException e) {
-            System.out.println("Error en la consulta SELECT por nombre de Profesor.");
-        }
-        return null;        
-    } 
-	
-	public Profesor obtenerProfesorApellidoPaterno(String paterno) {        
-        ResultSet rs = null;
-        PreparedStatement pst = null;
-        Connection con = conectar();
-        
-        String sql = "SELECT * FROM persona apellido_paterno= ? and numero_empleado IS NOT NULL";
-        
-        try {
-            pst = con.prepareStatement(sql);
-            pst.setString(1,paterno);
-            rs = pst.executeQuery();
-            Profesor me = null;
-            if(rs.next()) {
-                
-                String nombre = rs.getString("nombre");
-				String apellidoPaterno = rs.getString("apellido_paterno");
-				String apellidoMaterno = rs.getString("apellido_materno");
-				Date fechaNacimiento = rs.getDate("fecha_nacimiento");
-				String domicilio = rs.getString("domicilio");
-				//ArrayList<String> telefono;
-				String claveAcceso = rs.getString("clave");
-				String nombreUsuario = rs.getString("nombre_usuario");
-				int numEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
-                                
-                me = new Profesor( numEmpleado, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, claveAcceso, nombreUsuario);
-            }
-            return me;
-        } catch(SQLException e) {
-            System.out.println("Error en la consulta SELECT por apellido_paterno de Profesor.");
-        }
-        return null;        
-    } 
 	
 }

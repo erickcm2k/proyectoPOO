@@ -96,6 +96,7 @@ public class ConsultasTelefono extends ConexionBD {
             }
             return telefonos;
         } catch(SQLException e) {
+            System.out.println("Error en consulta telefonos por id.");
             e.printStackTrace();
         }
         return null;        
