@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Control;
 
+import Control.ConexionBD;
+import Modelo.Revista;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

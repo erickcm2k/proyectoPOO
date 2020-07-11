@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecopoonetbeans;
+import Control.ConsultasPersona;
 import Modelo.*;
 import java.util.ArrayList;
 

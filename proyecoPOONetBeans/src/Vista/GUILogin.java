@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Control.*;
 import Modelo.*;
 import java.awt.Graphics;
 import java.awt.Image;
