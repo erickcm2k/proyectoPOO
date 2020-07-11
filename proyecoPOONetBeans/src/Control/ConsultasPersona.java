@@ -6,10 +6,7 @@
 package Control;
 
 import Control.ConexionBD;
-import Modelo.Alumno;
-import Modelo.Empleado;
-import Modelo.Persona;
-import Modelo.Profesor;
+import Modelo.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;

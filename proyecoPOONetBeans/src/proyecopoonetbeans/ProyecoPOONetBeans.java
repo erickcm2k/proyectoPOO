@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package proyecopoonetbeans;
+
 import Control.*;
 import Modelo.*;
 import java.util.ArrayList;
+
 
 /**
  *
@@ -17,6 +19,7 @@ public class ProyecoPOONetBeans {
     /**
      * @param args the command line arguments
      */
+<<<<<<< HEAD
     public static void main(String[] args) {                    
             /*ConsultasProfesor con = new ConsultasProfesor();
             Profesor prof = con.obtenerProfesorPorId(118);            
@@ -36,6 +39,7 @@ public class ProyecoPOONetBeans {
                 
             }         
             
+
 
     }
      

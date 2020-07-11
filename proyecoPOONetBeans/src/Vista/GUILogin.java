@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -167,16 +168,24 @@ public class GUILogin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
+		/*
+		************************Buscar y abrir el GUIAdmin*******************
+		*/
+		boolean verdad =true;
 		for(Persona p: personas){
 			if(p.getNombreUsuario().equals(txtUsuario.getText()) && p.getClaveAcceso().equals(password.getText())){
 				if(p instanceof Empleado){
 					System.out.println("Listo");
+					verdad =false;
+					new GUIAdmin().setVisible(true);
+					this.dispose();
 				}
 			}
-			
-			
 		}
-
+		if(verdad){
+			JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña no válidos\nIngrese nuevamente.");
+			txtUsuario.setFocusable(true);
+		}
     }//GEN-LAST:event_btnIngresarActionPerformed
 
 	/**
