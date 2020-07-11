@@ -8,6 +8,7 @@ package Vista;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -362,6 +363,11 @@ public class GUIAdmin extends javax.swing.JFrame {
         jBBaja.setText("Dar Baja");
 
         cerrarSesionP1.setText("Cerrar Sesión");
+        cerrarSesionP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarSesionP1ActionPerformed(evt);
+            }
+        });
 
         jBIngresateleA.setText("Ingresar Telefono");
 
@@ -611,6 +617,11 @@ public class GUIAdmin extends javax.swing.JFrame {
         jButton3.setText("Cambiar");
 
         cerrarSesionP.setText("Cerrar Sesión");
+        cerrarSesionP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarSesionPActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -887,6 +898,11 @@ public class GUIAdmin extends javax.swing.JFrame {
         );
 
         jBCerrar.setText("Cerrar Sesión");
+        jBCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCerrarActionPerformed(evt);
+            }
+        });
 
         jBCambiar.setText("Cambiar");
 
@@ -988,6 +1004,11 @@ public class GUIAdmin extends javax.swing.JFrame {
         jTPGeneral.addTab("Material", jPMaterial);
 
         jBSesionPre.setText("Cerrar Sesión");
+        jBSesionPre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSesionPreActionPerformed(evt);
+            }
+        });
 
         jBCambiarPr.setText("Cambiar");
 
@@ -1155,6 +1176,34 @@ public class GUIAdmin extends javax.swing.JFrame {
     private void txtBoleta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBoleta1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBoleta1ActionPerformed
+
+    private void cerrarSesionP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionP1ActionPerformed
+        // TODO add your handling code here:
+		JOptionPane.showMessageDialog(this, "¡Hasta luego!.");
+		this.dispose();
+		new GUILogin().setVisible(true);
+    }//GEN-LAST:event_cerrarSesionP1ActionPerformed
+
+    private void cerrarSesionPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionPActionPerformed
+        // TODO add your handling code here:
+		JOptionPane.showMessageDialog(this, "¡Hasta luego!.");
+		this.dispose();
+		new GUILogin().setVisible(true);
+    }//GEN-LAST:event_cerrarSesionPActionPerformed
+
+    private void jBCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarActionPerformed
+        // TODO add your handling code here:
+		JOptionPane.showMessageDialog(this, "¡Hasta luego!.");
+		this.dispose();
+		new GUILogin().setVisible(true);
+    }//GEN-LAST:event_jBCerrarActionPerformed
+
+    private void jBSesionPreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSesionPreActionPerformed
+        // TODO add your handling code here:
+		JOptionPane.showMessageDialog(this, "¡Hasta luego!.");
+		this.dispose();
+		new GUILogin().setVisible(true);
+    }//GEN-LAST:event_jBSesionPreActionPerformed
 
 	/**
 	 * @param args the command line arguments

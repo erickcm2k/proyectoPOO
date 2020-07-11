@@ -501,6 +501,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarSesionP1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBIngresateleA">
               <Properties>
@@ -920,6 +923,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarSesionPActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
               <AuxValues>
@@ -1360,6 +1366,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCerrarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBCambiar">
               <Properties>
@@ -1509,6 +1518,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSesionPreActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBCambiarPr">
               <Properties>
