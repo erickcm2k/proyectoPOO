@@ -19,7 +19,7 @@ public class ProyecoPOONetBeans {
     /**
      * @param args the command line arguments
      */
-<<<<<<< HEAD
+
     public static void main(String[] args) {                    
             /*ConsultasProfesor con = new ConsultasProfesor();
             Profesor prof = con.obtenerProfesorPorId(118);            
@@ -31,7 +31,6 @@ public class ProyecoPOONetBeans {
             }*/
      
             ConsultasProfesor con = new ConsultasProfesor();
-            int i = 1;
             ArrayList<Profesor> profesores = con.obtenerListaProfesores();
             
             for(Profesor prof : profesores) {

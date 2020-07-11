@@ -20,7 +20,7 @@ import java.sql.Statement;
 public class ConexionBD { 
     private String cadenaConexion = "jdbc:mysql://";
     private String usuario = "root";
-    private String contrasenia = "cometota";
+    private String contrasenia = "root";
     private String bd = "biblioteca";
     private String ip = "localhost:3306";
     private Statement instruccion; 
