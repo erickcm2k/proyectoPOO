@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import Modelo.*;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -18,6 +20,8 @@ import javax.swing.JPanel;
 public class GUILogin extends javax.swing.JFrame {
 	//Atributo 
 	Fondo fondo1 = new Fondo();
+	ConsultasPersona perso = new ConsultasPersona();
+	ArrayList<Persona> personas;
 
 	/**
 	 * Creates new form GUILoggin
@@ -29,7 +33,10 @@ public class GUILogin extends javax.swing.JFrame {
 		//LLenar JFrame
 		initComponents();
 		ponerIconos();
-		//Listo
+		
+		//Generar personas
+		personas = perso.obtenerListaPersonas();
+		
 		//Localizar JFrame
 		this.setLocationRelativeTo(null);
 	}
@@ -81,6 +88,11 @@ public class GUILogin extends javax.swing.JFrame {
         btnIngresar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(102, 255, 204));
         btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ingredarJFrameLayout = new javax.swing.GroupLayout(ingredarJFrame);
         ingredarJFrame.setLayout(ingredarJFrameLayout);
@@ -151,6 +163,20 @@ public class GUILogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // TODO add your handling code here:
+		for(Persona p: personas){
+			if(p.getNombreUsuario().equals(txtUsuario.getText()) && p.getClaveAcceso().equals(password.getText())){
+				if(p instanceof Empleado){
+					System.out.println("Listo");
+				}
+			}
+			
+			
+		}
+
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
 	/**
 	 * @param args the command line arguments
