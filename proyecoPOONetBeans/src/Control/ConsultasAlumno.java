@@ -23,11 +23,7 @@ public class ConsultasAlumno extends ConexionBD {
     
 	public boolean registrarAlumno(Alumno alum) {
         PreparedStatement pst = null;
-        Connection con = conectar();
-        ArrayList<String> telefonos = new ArrayList();
-        for(String tels : alum.getTelefono()) {
-            telefonos.add(tels);
-        }      
+        Connection con = conectar();    
         
         String sql = "insert into persona(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, boleta_alumno, nivel_alumno) values (?,?,?,?,?,?,?,?,?)";
             

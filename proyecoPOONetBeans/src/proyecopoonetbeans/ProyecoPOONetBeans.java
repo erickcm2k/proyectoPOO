@@ -23,40 +23,25 @@ public class ProyecoPOONetBeans {
      */
 
     public static void main(String[] args) {                    
-            /*ConsultasAlumno con = new ConsultasAlumno();
-            Alumno alumno = con.obtenerAlumnoPorId(100);            
-
-            
-            System.out.println(alumno.getNombre());
-            for(String tel : alumno.getTelefono()) {
-                System.out.println(tel);
-            }*/
-     
-            /*ConsultasProfesor con = new ConsultasProfesor();
-            int i = 1;
-            ArrayList<Profesor> profesores = con.obtenerListaProfesores();
-            
-            for(Profesor prof : profesores) {
-                System.out.println(prof.getNombre() + " " + prof.getNumEmpleado() + " " + prof.getTelefono());
-                
-            }  */
-            
+       
+       
             // Prueba de inserción de un alumno junto con sus teléfonos
-            /*Telefono tel1 = new Telefono(1, "123456");
+           /* Telefono tel1 = new Telefono(1, "123456");
             Telefono tel2 = new Telefono(1, "654321");
             Date fecha = Date.valueOf("2000-07-10");
             ArrayList<Telefono> tels = new ArrayList(Arrays.asList(tel1, tel2));
             ArrayList<String> telefonos = new ArrayList();
+            ArrayList<String> materiasImpartidas = new ArrayList();
             for(Telefono tel : tels) {
                 telefonos.add(tel.getTelefono());
             }
-            Alumno alumno = new Alumno(201963, "bachillerato", "erickkk", "castañeda", "martinez", fecha, "calle 1", telefonos, "mipassword", "erickce40");
+            Profesor prof = new Profesor(123456, materiasImpartidas, "erickkk", "castañeda", "martinez", fecha, "calle 1", telefonos, "mipassword", "erickce40");
                 
             
-            ConsultasAlumno con = new ConsultasAlumno();
-            ConsultasAlumno con2 = new ConsultasAlumno();
-            con.registrarAlumno(alumno);            
-            int id = con2.obtenerIdPorBoleta(201963);
+            ConsultasProfesor con = new ConsultasProfesor();
+            ConsultasProfesor con2 = new ConsultasProfesor();
+            con.registrarProfesor(prof);            
+            int id = con2.obtenerIdPorNumeroEmpleado(123456);
             for(String tel : telefonos) {
                 ConsultasTelefono conTel = new ConsultasTelefono();
                 Telefono telefonoRegistrar = new Telefono(id, tel);
@@ -65,14 +50,14 @@ public class ProyecoPOONetBeans {
             System.out.println(id);*/
             
             // pruebas para borrar alumnos junto con sus teléfonos
-            
-            /*ConsultasAlumno con1 = new ConsultasAlumno();
-            ConsultasAlumno con2 = new ConsultasAlumno();
+           /* 
+            ConsultasProfesor con1 = new ConsultasProfesor();
+            ConsultasProfesor con2 = new ConsultasProfesor();
             ConsultasTelefono conTel = new ConsultasTelefono();
-            int id = con1.obtenerIdPorBoleta(201963);
+            int id = con1.obtenerIdPorNumeroEmpleado(123456);
             conTel.borrarTelefonoPorId(id);
-            con2.borrarAlumnoPorBoleta(201963);*/
-            
+            con2.borrarProfesorPorNumeroEmpleado(123456);
+            */
             //(int boleta, String nivel, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String domicilio, ArrayList<String> telefono, String claveAcceso, String nombreUsuario)
             /*
             Pruebas para modificar alumnos
