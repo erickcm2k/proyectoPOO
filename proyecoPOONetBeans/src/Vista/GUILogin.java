@@ -81,6 +81,7 @@ public class GUILogin extends javax.swing.JFrame {
         txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        txtUsuario.setName(""); // NOI18N
 
         password.setBackground(new java.awt.Color(255, 255, 255));
         password.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
