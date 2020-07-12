@@ -75,6 +75,23 @@ public class ConsultasTelefono extends ConexionBD {
         return false;        
     }
     
+    public boolean borrarTelefonoPorId(int id_persona) {
+        PreparedStatement pst = null;
+        Connection con = conectar();
+        
+        String sql = "DELETE FROM telefono WHERE id_persona=? ";
+        
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setInt(1,id_persona);
+            pst.execute();
+            return true;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return false;        
+    }    
+    
     public ArrayList<Telefono> obtenerTelefonosPorId(int id_persona) {
         ArrayList<Telefono> telefonos = new ArrayList();
         ResultSet rs = null;
