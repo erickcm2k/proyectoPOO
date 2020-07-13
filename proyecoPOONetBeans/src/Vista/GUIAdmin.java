@@ -2123,6 +2123,7 @@ public class GUIAdmin extends javax.swing.JFrame {
 			if(conl.borrarLibro((Libro)SelecionadoM)){
 				modeloMaterial.removeRow(filasM);
 				materiales.remove(aux);
+				JOptionPane.showMessageDialog(this,"Cambio realizado.");
 			}
 			else{
 				JOptionPane.showMessageDialog(this,"No se a eliminado Libro.");
@@ -2133,6 +2134,7 @@ public class GUIAdmin extends javax.swing.JFrame {
 			if(conr.borrarRevista((Revista)SelecionadoM)){
 				modeloMaterial.removeRow(filasM);
 				materiales.remove(aux);
+				JOptionPane.showMessageDialog(this,"Cambio realizado.");
 			}
 			else{
 				JOptionPane.showMessageDialog(this,"No se a eliminado Revista.");
@@ -2143,9 +2145,11 @@ public class GUIAdmin extends javax.swing.JFrame {
 			if(cone.borrarMaterialElectronico((MaterialElectronico)SelecionadoM)){
 				modeloMaterial.removeRow(filasM);
 				materiales.remove(aux);
+				JOptionPane.showMessageDialog(this,"Cambio realizado.");
 			}
 			else{
 				JOptionPane.showMessageDialog(this,"No se a eliminado Enlace.");
+				JOptionPane.showMessageDialog(this,"Cambio realizado.");
 			}
 		}
 		
@@ -2157,13 +2161,13 @@ public class GUIAdmin extends javax.swing.JFrame {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				if(jCBoleta.isSelected()){
-					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorP.getText(),0));
+					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorA.getText(),0));
 				}
 				else if(jCNombre.isSelected()){
-					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorP.getText(),1));
+					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorA.getText(),1));
 				}
 				else if(jCPaterno.isSelected()){
-					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorP.getText(),2));
+					trs.setRowFilter(RowFilter.regexFilter("(?i)"+txtBuscadorA.getText(),2));
 				}
 				
 			}
