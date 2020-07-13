@@ -26,7 +26,6 @@ public abstract class ConexionBD {
     protected Statement instruccion; 
     protected ResultSet tablaResultado;
     protected Connection conexion; 
-
     
     public Connection conectar() {
         try {
