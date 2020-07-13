@@ -17,15 +17,15 @@ import java.sql.Statement;
  *
  * @author erick
  */
-public class ConexionBD { 
-    private String cadenaConexion = "jdbc:mysql://";
-    private String usuario = "root";
-    private String contrasenia = "root";
-    private String bd = "biblioteca";
-    private String ip = "localhost:3306";
-    private Statement instruccion; 
-    private ResultSet tablaResultado;
-    private Connection conexion; 
+public abstract class ConexionBD { 
+    protected String cadenaConexion = "jdbc:mysql://";
+    protected String usuario = "root";
+    protected String contrasenia = "root";
+    protected String bd = "biblioteca";
+    protected String ip = "localhost:3306";
+    protected Statement instruccion; 
+    protected ResultSet tablaResultado;
+    protected Connection conexion; 
 
     
     public Connection conectar() {

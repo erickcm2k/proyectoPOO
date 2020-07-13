@@ -21,18 +21,14 @@ import java.util.ArrayList;
  */
 public class ConsultasProfesor extends ConexionBD {
     
-	/*public boolean registrarProfesor(Profesor prof) {
+    public boolean registrarProfesor(Profesor prof) {
         PreparedStatement pst = null;
         Connection con = conectar();
-        ArrayList<String> telefonos = new ArrayList();
-        for(String tels : prof.getTelefono()) {
-            telefonos.add(tels);
-        }      
-        
-        String sql = "insert into persona(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, boleta_alumno, nivel_alumno) values (?,?,?,?,?,?,?,?,?)";
-            
-        
+
+        String sql = "insert into persona(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, domicilio, clave, nombre_usuario, numero_empleado) values (?,?,?,?,?,?,?,?)";
+                    
         try {
+            
             pst = con.prepareStatement(sql);
             pst.setString(1, prof.getNombre());
             pst.setString(2, prof.getApellidoPaterno());
@@ -41,10 +37,11 @@ public class ConsultasProfesor extends ConexionBD {
             pst.setString(5, prof.getDomicilio());
             pst.setString(6, prof.getNombreUsuario());
             pst.setString(7, prof.getClaveAcceso());
-            pst.setInt(8, prof.getBoleta());
-            pst.setString(9, prof.getNivel());
+            pst.setInt(8, prof.getNumEmpleado());
+            
             pst.execute();        
             return true;
+            
         } catch(SQLException e) {
             System.out.println("Error en la consulta INSERT de Profesor.");
         }
@@ -52,19 +49,40 @@ public class ConsultasProfesor extends ConexionBD {
     }        
    
     
-    public boolean modificarProfesor(Profesor alum, Profesor nuevoAlum) {
-        return false;
-    }    
-    
-    public boolean borrarProfesorPorNumeroEmpleado(int boleta) {
+    public boolean modificarProfesor(Profesor prof, Profesor nuevoProf) {
         PreparedStatement pst = null;
         Connection con = conectar();
         
-        String sql = "DELETE FROM persona WHERE boleta_alumno=?";
+        String sql = "update persona set nombre=?, apellido_paterno=?, apellido_materno=?, fecha_nacimiento=?, domicilio=?, clave=?, nombre_usuario=? numero_empleado=? where numero_empleado=?";
+        try {
+            pst = con.prepareStatement(sql);
+            
+            pst.setString(1, prof.getNombre());
+            pst.setString(2, prof.getApellidoPaterno());
+            pst.setString(3, prof.getApellidoMaterno());
+            pst.setDate(4, prof.getFechaNacimiento());
+            pst.setString(5, prof.getDomicilio());
+            pst.setString(6, prof.getClaveAcceso());
+            pst.setString(7, prof.getNombreUsuario());
+            pst.setInt(8, prof.getNumEmpleado());            
+            pst.setInt(9, nuevoProf.getNumEmpleado());
+            pst.execute();
+            return true;
+        } catch(SQLException e) {
+            System.out.println("Error en la consulta UPDATE de Profesor.");
+        }
+        return false;
+    }  
+    
+    public boolean borrarProfesorPorNumeroEmpleado(int numero_empleado) {
+        PreparedStatement pst = null;
+        Connection con = conectar();
+        
+        String sql = "DELETE FROM persona WHERE numero_empleado=?";
         
         try {
             pst = con.prepareStatement(sql);
-            pst.setInt(1, boleta);
+            pst.setInt(1, numero_empleado);
             pst.execute();
             return true;
         } catch(SQLException e) {
@@ -76,12 +94,13 @@ public class ConsultasProfesor extends ConexionBD {
          
 
     public ArrayList<Profesor> obtenerListaProfesores() {
-        ArrayList<Profesor> alumnos = new ArrayList();
+        ArrayList<Profesor> profesores = new ArrayList();
         ResultSet rs = null;
+        ArrayList<String> materiasImpartidas = new ArrayList();        
         PreparedStatement pst = null;
         Connection con = conectar();
         
-        String sql = "SELECT * FROM persona WHERE boleta_alumno IS NOT NULL";
+        String sql = "SELECT * FROM persona WHERE numero_empleado IS NOT NULL";
         try {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -95,8 +114,7 @@ public class ConsultasProfesor extends ConexionBD {
                 String domicilio = rs.getString("domicilio");
                 String claveAcceso = rs.getString("clave");
                 String nombreUsuario = rs.getString("nombre_usuario");
-                int boleta = Integer.parseInt(rs.getString("boleta_alumno"));
-                String nivel = rs.getString("nivel_alumno");
+                int numeroEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
                 ConsultasTelefono conTel = new ConsultasTelefono();
                 ArrayList<Telefono> tels = new ArrayList();
                 ArrayList<String> telefonos = new ArrayList();                
@@ -105,29 +123,55 @@ public class ConsultasProfesor extends ConexionBD {
                    telefonos.add(tel.getTelefono());                   
                 }                  
                 
-                Profesor alum = new Profesor(boleta, nivel, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
-                alumnos.add(alum);
+                Profesor profesor = new Profesor(numeroEmpleado, materiasImpartidas, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
+                profesores.add(profesor);
             }
-            return alumnos;
+            return profesores;
         } catch(SQLException e) {
             System.out.println("Error en la consulta SELECT de Profesor.");
         }
-        return null;        
+        return null;                     
     } 
+    
+    public int obtenerIdPorNumeroEmpleado(int numero_empleado) {
+        ResultSet rs = null;
+        PreparedStatement pst = null;
+        Connection con = conectar();
+        String sql = "SELECT id FROM persona WHERE numero_empleado=?";
+        int id;
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setInt(1, numero_empleado);
+            rs = pst.executeQuery();
+            if(rs.next()) {                      
+                id = Integer.parseInt(rs.getString("id"));
+                return id;
+            } else {
+                return 0;
+            }
+            
+
+	} catch(SQLException e) {
+            System.out.println("Error en la consulta SELECT por numero_empleado de Profesor.");
+            e.printStackTrace();
+        }
+        return 0;        
+    }    
 	
-	public Profesor obtenerAlumnoPorId(int id_alumno) {        
+	public Profesor obteneProfesorPorId(int id_profesor) {        
         ResultSet rs = null;
         PreparedStatement pst = null;
         Connection con = conectar();
         ConsultasTelefono conBD = new ConsultasTelefono();
         ArrayList<Telefono> tels = new ArrayList();
+        ArrayList<String> materiasImpartidas = new ArrayList();
         String sql = "SELECT * FROM persona WHERE id=?";
         
         try {
             pst = con.prepareStatement(sql);
-            pst.setInt(1,id_alumno);
+            pst.setInt(1, id_profesor);
             rs = pst.executeQuery();
-            Profesor alumno = null;
+            Profesor profesor = null;
             if(rs.next()) {
                 
                 String nombre = rs.getString("nombre");
@@ -137,21 +181,20 @@ public class ConsultasProfesor extends ConexionBD {
                 String domicilio = rs.getString("domicilio");
                 String claveAcceso = rs.getString("clave");
                 String nombreUsuario = rs.getString("nombre_usuario");
-                int boleta = Integer.parseInt(rs.getString("boleta_alumno"));
-                String nivel = rs.getString("nivel_alumno");
-                tels = conBD.obtenerTelefonosPorId(id_alumno);
+                int numeroEmpleado = Integer.parseInt(rs.getString("numero_empleado"));
+                tels = conBD.obtenerTelefonosPorId(id_profesor);
                 ArrayList<String> telefonos = new ArrayList();                                
                 for(Telefono tel : tels) {
                     telefonos.add(tel.getTelefono());
                 }        
                 
-                alumno = new Profesor(boleta, nivel, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
-                return alumno;
+                profesor = new Profesor(numeroEmpleado, materiasImpartidas, nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, domicilio, telefonos, claveAcceso, nombreUsuario);
+                return profesor;
             }
 	} catch(SQLException e) {
             System.out.println("Error en la consulta SELECT por numero_empleado de Profesor.");
             e.printStackTrace();
         }
         return null;        
-    }	*/
+    }	
 }
