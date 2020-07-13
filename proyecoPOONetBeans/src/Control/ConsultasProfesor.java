@@ -57,15 +57,15 @@ public class ConsultasProfesor extends ConexionBD {
         try {
             pst = con.prepareStatement(sql);
             
-            pst.setString(1, prof.getNombre());
-            pst.setString(2, prof.getApellidoPaterno());
-            pst.setString(3, prof.getApellidoMaterno());
-            pst.setDate(4, prof.getFechaNacimiento());
-            pst.setString(5, prof.getDomicilio());
-            pst.setString(6, prof.getClaveAcceso());
-            pst.setString(7, prof.getNombreUsuario());
-            pst.setInt(8, prof.getNumEmpleado());            
-            pst.setInt(9, nuevoProf.getNumEmpleado());
+            pst.setString(1, nuevoProf.getNombre());
+            pst.setString(2, nuevoProf.getApellidoPaterno());
+            pst.setString(3, nuevoProf.getApellidoMaterno());
+            pst.setDate(4, nuevoProf.getFechaNacimiento());
+            pst.setString(5, nuevoProf.getDomicilio());
+            pst.setString(6, nuevoProf.getClaveAcceso());
+            pst.setString(7, nuevoProf.getNombreUsuario());
+            pst.setInt(8, nuevoProf.getNumEmpleado());            
+            pst.setInt(9, prof.getNumEmpleado());
             pst.execute();
             return true;
         } catch(SQLException e) {
