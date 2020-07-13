@@ -46,7 +46,7 @@ public class Prestamo {
         //Modificar
         Date fecha=null;
         if(tieneAdeudo()){
-            return fechaDevolucion.compareTo(fecha)*2.5;
+            return fechaDevolucion.compareTo(fecha)*multa;
         }
         return 0;
         
